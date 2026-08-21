@@ -1,6 +1,6 @@
-# Proyecto Introducción a Señales Biomédicas
+#  Proyecto ISB
 
-Este es el repositorio oficial de mi proyecto.
+Este es el repositorio oficial de  proyecto.
 
 ## Descripción
 Aquí explicamos de qué trata el proyecto y cuáles son sus objetivos.
