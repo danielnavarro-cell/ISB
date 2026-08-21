@@ -1,4 +1,4 @@
-# Mi Proyecto ISB
+# Proyecto Introducción a Señales Biomédicas
 
 Este es el repositorio oficial de mi proyecto.
 
