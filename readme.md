@@ -25,8 +25,8 @@ Este es el repositorio oficial de  proyecto de nuestro GRUPO 8.
     <th><img src="foto1" width="100">
     <th><img src="https://github.com/user-attachments/assets/e553ff0d-ec5a-494d-b232-abcaec696601" width="100">
     <th><img src="URL_DE_TU_FOTO_3" width="100">
-    <th><img src="URL_DE_TU_FOTO_4" width="100"><br>Foto 4</th>
-    <th><img src="URL_DE_TU_FOTO_5" width="100"><br>Foto 5</th>
+    <th><img src="URL_DE_TU_FOTO_4" width="100">
+    <th><img src="URL_DE_TU_FOTO_5" width="100">
   </tr>
   <tr>
     <td>Adriana Abanto</td>
