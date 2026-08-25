@@ -22,11 +22,11 @@ Este es el repositorio oficial de  proyecto de nuestro GRUPO 8.
 
 <table>
   <tr>
-    <th><img src="foto1" width="100">
+    <th><img src="https://github.com/user-attachments/assets/1083c20d-92d6-4043-a297-114a6346ca9f" width="100">
     <th><img src="https://github.com/user-attachments/assets/e553ff0d-ec5a-494d-b232-abcaec696601" width="100">
-    <th><img src="URL_DE_TU_FOTO_3" width="100">
-    <th><img src="URL_DE_TU_FOTO_4" width="100">
-    <th><img src="URL_DE_TU_FOTO_5" width="100">
+    <th><img src="https://github.com/user-attachments/assets/2d6efd9a-b6c6-4eae-9fd0-c55831e7ab0c" width="100">
+    <th><img src="https://github.com/user-attachments/assets/d766d599-a9a9-4c6a-9cf8-5348ddd9393a" width="100">
+    <th><img src="https://github.com/user-attachments/assets/47109cd5-7fb9-45d8-9087-5a8eb00f9fd2" width="100">
   </tr>
   <tr>
     <td>Adriana Abanto</td>
