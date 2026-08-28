@@ -1,9 +1,10 @@
 <img width="617" height="324" alt="logoUPCH" src="https://github.com/user-attachments/assets/263dcd6d-0237-41be-8d17-3a05d10bb54c" />
 
 # REPOSITORIO GRUPO 8 - ISB
-**CURSO:** Introducción a Señales Biomédicas
+                                **CURSO:** Introducción a Señales Biomédicas
 
-**CICLO DE DICTADO:** 2026.2
+                                        **CICLO DE DICTADO:** 2026.2
+                                        
 
 </div>
 Este es el repositorio oficial de  proyecto de nuestro GRUPO 8.
