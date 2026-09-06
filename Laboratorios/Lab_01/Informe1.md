@@ -1,9 +1,11 @@
-# <p align="center"> Resumen del laboratorio 01:  Git, GitHub, VS Code 
+# <p align="center"> Resumen del laboratorio 01 
 </p> 
 ---
 
-## Objetivo del laboratorio : 
+# Objetivo del laboratorio : 
+
 En este laboratorio, nuestro objetivo fue familiarizarnos con las herramientas usadas para para el desarrollo, documentación y gestión de proyectos de ingeniería
+
 ---
 
 # Herramientas empleadas: 
@@ -59,207 +61,52 @@ Esta información queda asociada posteriormente a los **commits** realizados.
 ---
 
 # Funcionamiento del Git 
-Todo comienza en el Working Directory o directorio de trabajo. Esta es  la carpeta local en nuestras computadoras donde abrimos, editamos y guardamos los archivos de manera normal. 
+Todo comienza en el directorio de trabajo. Esta es  la carpeta local en nuestras computadoras donde abrimos, editamos y guardamos los archivos de manera normal. 
 
-Una vez que realizamos cambios en este directorio, no se guardan automáticamente en el historial. Primero debemos pasarlos al Staging Area o área de preparación. En esta etapa seleccionamos específicamente qué modificaciones queremos incluir en nuestro próximo guardado 
+Una vez que realizamos cambios en este directorio, no se guardan automáticamente en el historial. Primero debemos pasarlos al área de preparación. En esta etapa seleccionamos específicamente qué modificaciones queremos incluir en nuestro próximo guardado 
 Para enviar un archivo a esta zona usamos el comando ``` git add nombre_archivo ``` , o si queremos agregar todos los cambios modificados de una sola vez, utilizamos  ``` git add ```  ..
 
-Cuando ya tenemos los archivos listados en el área de preparación, el siguiente paso es registrarlos en el repositorio local. Al ejecutar el comando git commit -m "Descripción del cambio", lo que hacemos es tomar una especie de fotografía o captura del estado actual del proyecto. Esta captura se almacena de forma permanente en el historial interno de Git dentro de nuestra computadora, funcionando como un punto de restauración seguro de nuestro trabajo.
+Cuando ya tenemos los archivos listados en el área de preparación, el siguiente paso es registrarlos en el repositorio local. Al ejecutar el comando  ```  git commit -m  "Descripción del cambio" ```  , lo que se hacemos es como tener un historial de cambios interno del Git dentro de nuestra computadora, esto nos ayuda porque funciona como un punto de restauración de nuestro trabajo.
 
-Finalmente, para que el resto del equipo pueda ver los avances o para tener un respaldo en la nube, enviamos este historial local al Remote Repository o repositorio remoto. Utilizando el comando git push, todos los commits que guardamos en la computadora se sincronizan y se suben a la plataforma de GitHub.
+Finalmente, para que el resto del equipo pueda ver los avances o para tener un respaldo en la nube, enviamos este historial local al repositorio remoto. Utilizando el comando ```  git push  ```  , todos los commits que guardamos en la computadora se sincronizan y se suben a la plataforma de GitHub.
 
- Flujo de trabajo utilizado
-Durante el desarrollo de la sesión, aplicamos estas etapas teóricas mediante un ciclo de trabajo constante. Antes de registrar cualquier modificación, comprobamos que siempre es muy recomendable iniciar verificando cómo se encuentra el proyecto utilizando el comando git status. Esto nos resultó bastante útil porque nos permite identificar de manera clara qué archivos hemos modificado, cuáles son totalmente nuevos (y Git todavía no los rastrea) y cuáles ya están preparados para el commit.
+# Flujo de trabajo utilizado
+Durante el desarrollo de la sesión, aplicamos estas etapas teóricas de forma constante. Antes de registrar cualquier modificación, comprobamos el estado del proyecto con el  comando  ``` git status ``` . Esto nos resultó bastante útil porque nos permite identificar de manera clara qué archivos hemos modificado, cuáles son totalmente nuevos (y Git todavía no los rastrea) y cuáles ya están preparados para el commit.
 
-Después de modificar nuestros archivos y verificar su estado, el flujo estándar que seguimos consistió en agregar los cambios con git add .. Luego, procedimos a empaquetarlos en una nueva versión ejecutando git commit -m "Actualización del informe Lab01", asegurándonos siempre de dejar un mensaje claro. Como último paso de esta rutina, utilizamos git push para sincronizar nuestro repositorio local con GitHub, logrando que nuestro trabajo en la nube quedara completamente actualizado.
+Después de modificar nuestros archivos y verificar su estado, el flujo estándar que seguimos consistió en agregar los cambios con  ``` git add . ``` .Luego, procedimos a empaquetarlos en una nueva versión ejecutando  ``` git commit -m "Actualización del informe Lab01"  ```  , asegurándonos siempre de dejar un mensaje claro. Como último paso de esta rutina, utilizamos ```  git push  ```   para sincronizar nuestro repositorio local con GitHub, logrando que nuestro trabajo en la nube quedara completamente actualizado.
+Por otro lado, también aprendimos que se puede realizar exactamente este mismo flujo de trabajo utilizando  la interfaz gráfica de Visual Studio Code. En lugar de ejecutar git status,  nos dirigimos al panel lateral izquierdo y hacemos clic en el ícono de Source Control (Control de código fuente). En este panel, el editor nos muestra de forma automática y visual una lista con todos los archivos que han sido modificados, agregados o eliminados, cumpliendo con la misma función de diagnóstico inicial.
+
+Luego respecto al área de preparación, en lugar de usar el comando git add ., solo pasamos el cursor sobre la lista de cambios y hacemos clic en el ícono del símbolo + (Stage All Changes). Esto mueve nuestros archivos a la sección de cambios preparados. A continuación, reemplazamos el comando del commit escribiendo nuestro mensaje descriptivo (como "Actualización del informe Lab01") directamente en la caja de texto superior y presionando el botón Commit. Como último paso, para sustituir el git push, simplemente hacemos clic en el botón azul Sync Changes (Sincronizar cambios) que aparece en el mismo panel. 
+
+
 --- 
 
-# 🕒 7. Los commits como historial del proyecto
 
-Un **commit** representa un punto específico dentro de la evolución del proyecto.
+# Uso de GitHub como repositorio remoto
 
+GitHub permite almacenar el proyecto de forma remota y mantener una estructura organizada de archivos y directorios en el cual se puede añadir a más personas para un trabajo colaborativo. 
+En la sesión se comentó que es muy importante tener un archivo  `README.md` que sirva de documentación de nuestro repositorio. 
 Por ejemplo:
 
-```text
-● Configuración inicial
-│
-● Creación del README
-│
-● Incorporación de imágenes
-│
-● Corrección de documentación
-│
-● Versión final del laboratorio
-```
-
-Para consultar este historial se utiliza:
-
-```bash
-git log
-```
-
-Una visualización más resumida se obtiene mediante:
-
-```bash
-git log --oneline
-```
-
-Y una representación útil cuando existen ramas es:
-
-```bash
-git log --oneline --graph --decorate --all
-```
-
-Esto permite identificar quién realizó cada modificación y regresar a estados anteriores del proyecto si fuera necesario.
+* `Software/README.md` : librerías, dependencias y funcionamiento del software.
+* `Hardware/README.md` : componentes y características técnicas.
+* `Laboratorios/Lab01/README.md` : documentación del laboratorio.
+* `README.md` principal :  descripción general del proyecto o curso.
 
 ---
 
-# 🌿 8. Trabajo mediante ramas
+# Markdown para documentación técnica
 
-Las **branches o ramas** permiten desarrollar modificaciones sin afectar directamente la versión principal del proyecto.
+Respecto al lenguaje Markdown utiliza símbolos sencillos para generar documentos estructurados. Por ejemplo, si queremos organizar la cabecera del documento podemos usar estos comandos 
 
-Una estructura típica sería:
-
-```text
-                  ●──●──● feature/documentacion
-                 /
-●────●────●─────●────────● main
-```
-
-Se puede crear una nueva rama mediante:
-
-```bash
-git checkout -b nombre_rama
-```
-
-Por ejemplo:
-
-```bash
-git checkout -b lab01-documentacion
-```
-
-Para regresar a `main`:
-
-```bash
-git checkout main
-```
-
-Este mecanismo resulta especialmente útil cuando diferentes integrantes trabajan simultáneamente en software, documentación o análisis de datos.
-
----
-
-# ☁️ 9. GitHub como repositorio remoto
-
-GitHub permite almacenar el proyecto de forma remota y mantener una estructura organizada de archivos y directorios.
-
-La organización propuesta para el curso sigue aproximadamente la siguiente estructura:
-
-```text
-Repositorio/
-│
-├── Software/
-│   └── README.md
-│
-├── Hardware/
-│   └── README.md
-│
-├── ISB/
-│   │
-│   └── Laboratorios/
-│       │
-│       └── Lab01/
-│           ├── README.md
-│           └── images/
-│
-└── README.md
-```
-
-Cada `README.md` puede contener documentación correspondiente al nivel donde se encuentra.
-
-Por ejemplo:
-
-* `Software/README.md` → librerías, dependencias y funcionamiento del software.
-* `Hardware/README.md` → componentes y características técnicas.
-* `Laboratorios/Lab01/README.md` → documentación del laboratorio.
-* `README.md` principal → descripción general del proyecto o curso.
-
-Esta organización facilita la **trazabilidad, reproducibilidad y mantenimiento** del proyecto.
-
----
-
-# 📝 10. Markdown para documentación técnica
-
-Markdown utiliza símbolos sencillos para generar documentos estructurados.
-
-## Encabezados
-
+``` ## Encabezados , # Título principal ,  ### Sección,  #### Subsección ```
+Si queremos escribir con algún detalle que resalte lo que queremos podemos usar: 
 ```markdown
-# Título principal
-## Subtítulo
-### Sección
-#### Subsección
+**Texto en negrita** *Texto en cursiva* . `código en línea`
 ```
 
-## Texto
 
-```markdown
-**Texto en negrita**
 
-*Texto en cursiva*
-
-`código en línea`
-```
-
-Resultado:
-
-**Texto en negrita**
-
-*Texto en cursiva*
-
-`código en línea`
-
----
-
-## Listas
-
-```markdown
-- Git
-- GitHub
-- VS Code
-- Markdown
-```
-
-También es posible crear listas numeradas:
-
-```markdown
-1. Editar archivo
-2. Guardar cambios
-3. Crear commit
-4. Subir a GitHub
-```
-
----
-
-## Tablas
-
-```markdown
-| Herramienta | Uso |
-|---|---|
-| Git | Control de versiones |
-| GitHub | Repositorio remoto |
-| VS Code | Editor |
-| Markdown | Documentación |
-```
-
----
-
-## Enlaces
-
-```markdown
-[Visual Studio Code](https://code.visualstudio.com/)
-```
-
----
 
 ## Imágenes
 
@@ -424,48 +271,9 @@ Al ingresar posteriormente al repositorio de GitHub se puede comprobar que los a
 
 ---
 
-# 🧪 15. Aplicación en Ingeniería Biomédica
 
-Aunque estas herramientas provienen principalmente del desarrollo de software, su utilidad se extiende directamente a proyectos de Ingeniería Biomédica.
 
-Por ejemplo, un mismo repositorio podría organizar:
-
-```text
-Proyecto_Biomedico/
-│
-├── Hardware/
-│   ├── esquematicos/
-│   └── README.md
-│
-├── Software/
-│   ├── adquisicion.py
-│   ├── procesamiento.py
-│   └── README.md
-│
-├── Data/
-│   └── experimentos/
-│
-├── Docs/
-│   └── protocolo.md
-│
-└── README.md
-```
-
-Esto permitiría controlar simultáneamente:
-
-* código de adquisición de señales biomédicas;
-* algoritmos de procesamiento;
-* configuraciones de sensores;
-* características del hardware;
-* documentación experimental;
-* resultados;
-* versiones del proyecto.
-
-De esta manera, Git y GitHub contribuyen no solo a almacenar archivos, sino también a mejorar la **reproducibilidad y trazabilidad de un desarrollo tecnológico**.
-
----
-
-# ✅ 16. Buenas prácticas aprendidas
+# Buenas prácticas aprendidas
 
 Durante el laboratorio se identificaron algunas prácticas importantes:
 
@@ -473,86 +281,23 @@ Durante el laboratorio se identificaron algunas prácticas importantes:
 * Escribir mensajes de commit cortos pero descriptivos.
 * Evitar subir archivos innecesarios al repositorio.
 * Mantener una estructura clara de carpetas.
-* Documentar cada módulo mediante archivos `README.md`.
 * Utilizar rutas relativas para imágenes almacenadas en GitHub.
-* Mantener actualizada la rama principal.
-* Utilizar ramas para cambios experimentales o colaborativos.
 * Incorporar imágenes o GIF cuando se documenta un procedimiento.
 * Realizar sincronizaciones frecuentes con el repositorio remoto.
 
-### Ejemplo de buenos commits
-
-✅ Recomendado:
-
-```text
-Add Git installation evidence
-Update Lab01 Markdown documentation
-Fix repository structure diagram
-Add VS Code preview GIF
-```
-
-❌ Poco descriptivo:
-
-```text
-cambio
-prueba
-final
-final2
-ahora_si_final
-```
-
----
-
-# 🧠 17. Principales aprendizajes
-
-Al finalizar el laboratorio se logró comprender que estas herramientas forman parte de un mismo flujo:
-
-```text
-             DESARROLLO
-                 │
-                 ▼
-             VS Code
-                 │
-       ┌─────────┴─────────┐
-       ▼                   ▼
-    Markdown              Git
- Documentación       Control de versiones
-       │                   │
-       └─────────┬─────────┘
-                 ▼
-               GitHub
-                 │
-                 ▼
-        Proyecto organizado,
-       trazable y colaborativo
-```
-
-Los principales aprendizajes fueron:
-
-1. Diferenciar las funciones de **Git y GitHub**.
-2. Comprender el flujo `Working Directory → Staging → Commit → Push`.
-3. Crear y documentar archivos `README.md`.
-4. Utilizar Markdown para generar documentación técnica.
-5. Administrar cambios desde VS Code.
-6. Sincronizar un repositorio local con GitHub.
-7. Comprender la utilidad de commits y ramas.
-8. Organizar un repositorio de forma reproducible.
-
----
-
-# 🏁 18. Conclusiones
+# Conclusiones
 
 Git, GitHub, Visual Studio Code y Markdown constituyen un conjunto de herramientas complementarias para el desarrollo organizado de proyectos tecnológicos.
 
-**Git** permite mantener un historial controlado de cambios, mientras que **GitHub** facilita el almacenamiento remoto y el trabajo colaborativo. Por otro lado, **VS Code** centraliza la edición y gestión del proyecto, y **Markdown** permite mantener documentación técnica ligera, estructurada y directamente integrada al repositorio.
+**Git** permite mantener un historial controlado de cambios, mientras que **GitHub** facilita el almacenamiento remoto y el trabajo colaborativo. Por otro lado, **VS Code** se encarga de la edición y gestión del proyecto, y **Markdown** permite mantener documentación técnica ligera, estructurada y directamente integrada al repositorio.
 
-En Ingeniería Biomédica, esta metodología resulta particularmente relevante debido a que los proyectos suelen integrar diferentes componentes —hardware, software, procesamiento de datos y documentación experimental— que deben mantenerse organizados y ser reproducibles.
+En Ingeniería Biomédica, esta metodología resulta importante debido a que los proyectos suelen integrar diferentes componentes como hardware, software, procesamiento de datos y documentación experimental que deben mantenerse organizados y ser reproducibles.
 
 El laboratorio permitió establecer un flujo de trabajo que podrá utilizarse durante el curso para documentar progresivamente los futuros desarrollos y mantener un historial claro de su evolución.
 
 ---
 
-# 📚 19. Referencias y recursos
+#  Referencias y recursos
 
 * Meza, M. *Getting Started with Git and GitHub: From Zero to Teamwork*.
 * Meza, M. *VS Code and Markdown: A Perfect Combination*.
