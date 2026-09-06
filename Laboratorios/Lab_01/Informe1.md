@@ -143,6 +143,6 @@ El laboratorio permitió establecer un flujo de trabajo que podrá utilizarse du
 ---
 
 <p align="center">
-  🧬 <strong>Ingeniería Biomédica</strong><br>
-  Laboratorio 01 — Control de versiones y documentación
+  <strong>Ingeniería Biomédica</strong><br>
+  Laboratorio 01
 </p>
