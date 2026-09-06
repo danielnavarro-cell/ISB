@@ -40,7 +40,8 @@ git --version 2.55.0.windows.5
 # Configuración inicial de Git
 
 Git necesita asociar los cambios realizados con un usuario. Para ello se configuraron el nombre y el correo electrónico.
-Acá se muestra cual seria la configuración que hice en la terminal para enlazar el Git a mi cuenta: 
+Acá se muestra la configuración en la terminal para enlazar el Git: 
+
 ```Símbolo del sistema
 C:\Users\User>git config --global user.name "Daniel Navarro"
 
@@ -52,7 +53,8 @@ La configuración puede verificarse utilizando:
 ```Símbolo del sistema
 git config --global --list
 ```
-Luego de escribir dicho comando, se mostraría de esta forma ya actualizado: 
+Luego de escribir dicho comando, podemos verificar que se guardo correctamente: 
+
 ```Símbolo del sistema 
 C:\Users\User>git config --global --list
 user.email=daniel.navarro@pucp.edu.pe
