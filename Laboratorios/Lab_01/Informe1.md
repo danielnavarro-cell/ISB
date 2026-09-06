@@ -93,7 +93,9 @@ Respecto al lenguaje Markdown utiliza símbolos sencillos para generar documento
 Y se vería de esta forma: 
  **hola mundo**
  *Mejoras del lab1* 
- --- 
+
+
+  
  Por otro lado, si queremos organizar la cabecera del documento podemos usar: 
  `código en línea`
 ` # Título principal`
