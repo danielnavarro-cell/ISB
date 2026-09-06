@@ -41,7 +41,4 @@ Este es el repositorio oficial de  proyecto de nuestro GRUPO 8.
 
 ---
 
-### Instrucciones rápidas
-1. Clonar el repositorio
-2. Abrir en VS Code
-3. ¡Empezar a programar!
+
