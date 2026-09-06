@@ -87,184 +87,24 @@ Por ejemplo:
 
 # Markdown para documentación técnica
 
-Respecto al lenguaje Markdown utiliza símbolos sencillos para generar documentos estructurados. Por ejemplo, si queremos organizar la cabecera del documento podemos usar estos comandos 
+Respecto al lenguaje Markdown utiliza símbolos sencillos para generar documentos estructurados. Por ejemplo, si queremos escribir con algún detalle que resalte lo que mencionamos en el texto podemos usar: 
+` **texto en negrita** `
+` *texto en cursiva :)* `
+Y se vería de esta forma: 
+ **hola mundo**
+ *lab1* 
+ Por otro lado, si queremos organizar la cabecera del documento podemos usar: 
+ `código en línea`
+` # Título principal`
+` ## Encabezado`
+` ### Sección`
+` #### Subsección ` 
+Y nos daría como resultado esta organización: 
 # Título principal
 ## Encabezado
 ### Sección
-#### Subsección  
-Si queremos escribir con algún detalle que resalte lo que queremos podemos usar: 
- **Texto en negrita** 
- *Texto en cursiva* 
- `código en línea` 
-
-
-
-
-## Imágenes
-
-Las imágenes pueden almacenarse dentro del propio repositorio.
-
-Por ejemplo:
-
-```text
-Lab01/
-├── README.md
-└── images/
-    ├── git_terminal.png
-    ├── vscode.png
-    └── github.png
-```
-
-Luego pueden insertarse mediante:
-
-```markdown
-![Git desde Terminal](images/git_terminal.png)
-```
-
-También se puede modificar su tamaño utilizando HTML:
-
-```html
-<p align="center">
-  <img src="images/git_terminal.png" width="700">
-</p>
-```
-
+#### Subsección
 ---
-
-# 🖥️ 11. Visual Studio Code + Markdown
-
-VS Code fue utilizado como entorno principal para editar la documentación.
-
-Para mejorar la visualización de archivos Markdown se puede instalar la extensión:
-
-> **Markdown Preview Enhanced**
-
-Desde:
-
-```text
-Extensions → Markdown Preview Enhanced → Install
-```
-
-### 📸 Evidencia
-
-<p align="center">
-  <img src="images/02_markdown_extension.png" width="700">
-</p>
-
-<p align="center">
-  <em>Figura 2. Instalación de una extensión para visualización de Markdown.</em>
-</p>
-
----
-
-# 👀 12. Visualización previa del README
-
-Una ventaja de Markdown es que el documento puede visualizarse mientras se escribe.
-
-En VS Code:
-
-```text
-README.md → Open Preview
-```
-
-También puede utilizarse:
-
-```text
-Ctrl + Shift + V
-```
-
-En macOS:
-
-```text
-⌘ + Shift + V
-```
-
-La visualización lado a lado permite observar simultáneamente el código Markdown y el resultado final.
-
-### 🎬 Evidencia del procedimiento
-
-<p align="center">
-  <img src="images/03_markdown_preview.gif" width="800">
-</p>
-
-<p align="center">
-  <em>Figura 3. Edición y previsualización dinámica de un archivo Markdown en VS Code.</em>
-</p>
-
----
-
-# 🔗 13. Integración de VS Code con GitHub
-
-VS Code incluye herramientas gráficas para administrar Git.
-
-Desde la pestaña:
-
-```text
-Source Control
-```
-
-es posible visualizar directamente los archivos modificados.
-
-El procedimiento utilizado puede resumirse como:
-
-```text
-Modificar archivo
-      ↓
-Source Control
-      ↓
-Stage Changes (+)
-      ↓
-Escribir mensaje
-      ↓
-Commit
-      ↓
-Sync Changes / Push
-      ↓
-GitHub
-```
-
-### 📸 Evidencia
-
-<p align="center">
-  <img src="images/04_source_control.png" width="700">
-</p>
-
-<p align="center">
-  <em>Figura 4. Panel Source Control de VS Code utilizado para administrar cambios del repositorio.</em>
-</p>
-
----
-
-# 🌐 14. Sincronización con GitHub
-
-Después de realizar el commit local, los cambios pueden publicarse utilizando:
-
-```bash
-git push
-```
-
-También puede hacerse directamente desde VS Code mediante:
-
-```text
-Sync Changes
-```
-
-Al ingresar posteriormente al repositorio de GitHub se puede comprobar que los archivos fueron actualizados.
-
-### 🎬 Evidencia
-
-<p align="center">
-  <img src="images/05_push_github.gif" width="800">
-</p>
-
-<p align="center">
-  <em>Figura 5. Sincronización de los cambios locales con el repositorio remoto de GitHub.</em>
-</p>
-
----
-
-
-
 # Buenas prácticas aprendidas
 
 Durante el laboratorio se identificaron algunas prácticas importantes:
