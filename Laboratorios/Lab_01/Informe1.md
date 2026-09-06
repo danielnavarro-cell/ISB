@@ -1,77 +1,38 @@
-# 🧬 Laboratorio 01 — Git, GitHub, VS Code y Markdown
+# Resumen del laboratorio 01:  Git, GitHub, VS Code 
 
 <p align="center">
   <strong>Ingeniería Biomédica | Herramientas para desarrollo y documentación colaborativa</strong>
 </p>
 
-<p align="center">
-  Control de versiones • Documentación técnica • Repositorios • Trabajo colaborativo
-</p>
 
 ---
 
-## 🎯 1. Objetivo del laboratorio
+## Objetivo del laboratorio : 
+En este laboratorio, nuestro objetivo fue familiarizarnos con las herramientas usadas para para el desarrollo, documentación y gestión de proyectos de ingeniería.
 
-El objetivo de este laboratorio fue familiarizarnos con herramientas utilizadas actualmente para el **desarrollo, documentación y gestión de proyectos de ingeniería**, particularmente **Git, GitHub, Visual Studio Code y Markdown**.
-
-Durante la sesión se configuró un entorno de trabajo que permite registrar cambios realizados sobre archivos, almacenar diferentes versiones de un proyecto, documentar procedimientos mediante archivos `README.md` y sincronizar el trabajo desarrollado localmente con un repositorio remoto en GitHub.
-
-Estas herramientas son especialmente útiles en proyectos de Ingeniería Biomédica, donde un mismo desarrollo puede involucrar simultáneamente **software, hardware, procesamiento de señales, documentación experimental y trabajo colaborativo**.
 
 ---
 
-# 🔄 2. Ecosistema de trabajo
-
-Aunque Git y GitHub suelen utilizarse juntos, cumplen funciones diferentes.
-
-| Herramienta  | Función principal                                                                                     |
-| ------------ | ----------------------------------------------------------------------------------------------------- |
-| **Git**      | Sistema de control de versiones que registra localmente los cambios realizados en un proyecto.        |
-| **GitHub**   | Plataforma remota que permite almacenar repositorios Git y colaborar con otros usuarios.              |
-| **VS Code**  | Entorno de desarrollo utilizado para editar archivos, ejecutar comandos y administrar Git.            |
-| **Markdown** | Lenguaje de marcado ligero utilizado para generar documentación estructurada mediante archivos `.md`. |
-
-Una forma simplificada de representar el entorno utilizado es:
-
-```text
-        COMPUTADORA LOCAL                         NUBE
-
-   ┌─────────────────────┐                ┌──────────────────┐
-   │      VS Code        │                │      GitHub      │
-   │                     │                │                  │
-   │ Código + README.md  │ ─── git push →│   Repositorio    │
-   │                     │←── git pull ── │     remoto       │
-   └──────────┬──────────┘                └──────────────────┘
-              │
-              ▼
-        ┌───────────┐
-        │    Git    │
-        │ historial │
-        │ versiones │
-        └───────────┘
-```
-
-> 💡 **Idea clave:** Git controla la historia del proyecto; GitHub permite almacenar y compartir esa historia de manera remota.
+# Herramientas empleadas: 
+En la sesión iniciamos descargando Git y creándonos una cuenta de GitHub, a pesar de que suelen utilizarse juntos,  cumplen funciones diferentes.
+Podemos definir Git como un sistema de control de versiones que registra localmente los cambios que hacemos en el proyecto. Mientras que GitHub es una plataforma donde alojamos nuestro repositorio de Git y que nos permite colaborar entre compañeros. 
+Por otro lado, también nos enseñaron el uso de VS CODE para las modificaciones sobre nuestro repositorio, esta herramienta es el entorno de desarrollo (IDE) desde donde editamos el código, ejecutamos comandos y administramos GIT. 
+Por útlimo, tambien nos mencionaron hacer del Markdown que es el lenguaje con el que estructuramos y redactamos la documentación en los archivos .md . 
+En conclusión, mediante Git podemos controlar la historia del proyecto en nuestras computadoras de forma local y GitHub nos permite guardar y compartir esas modificaciones en la nube para la contribución de todos los miembros de un equipo. 
 
 ---
 
-# 💻 3. Instalación y verificación de Git
+# Instalación y verificación de Git
 
-Antes de trabajar con repositorios se verificó que Git estuviera correctamente instalado.
+En la sesión, se nos recomendó que antes de trabajar con repositorios verificar que Git estuviera correctamente instalado.
 
-En macOS se utilizó la Terminal:
+Para ello abrimos el CMD (Símbolo del sistema) y ejecutamos el siguiente comando: 
 
-```bash
+```Símbolo del sistema
 git --version
 ```
 
-Una instalación correcta devuelve una versión de Git, por ejemplo:
-
-```text
-git version 2.x.x
-```
-
-### 📸 Evidencia
+###  Evidencia
 
 <p align="center">
   <img src="images/01_git_version.png" width="700">
