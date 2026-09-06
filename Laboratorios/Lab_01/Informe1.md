@@ -31,160 +31,52 @@ Para ello abrimos el CMD (Símbolo del sistema) y ejecutamos el siguiente comand
 ```Símbolo del sistema
 git --version
 ```
+```Símbolo del sistema
+git --version 2.55.0.windows.5
+``` 
+--- 
 
-###  Evidencia
-
-<p align="center">
-  <img src="images/01_git_version.png" width="700">
-</p>
-
-<p align="center">
-  <em>Figura 1. Verificación de la instalación de Git desde la Terminal.</em>
-</p>
-
----
-
-# 👤 4. Configuración inicial de Git
+# Configuración inicial de Git
 
 Git necesita asociar los cambios realizados con un usuario. Para ello se configuraron el nombre y el correo electrónico.
 
-```bash
-git config --global user.name "Nombre Apellido"
+```Símbolo del sistema
+C:\Users\User>git config --global user.name "Daniel Navarro"
 
-git config --global user.email "correo@universidad.edu.pe"
+C:\Users\User>git config --global user.email "daniel.navarro@pucp.edu.pe"
 ```
 
 La configuración puede verificarse utilizando:
 
-```bash
+```Símbolo del sistema
 git config --global --list
 ```
 
-Esta información queda asociada posteriormente a los **commits** realizados por el usuario.
+```Símbolo del sistema 
+C:\Users\User>git config --global --list
+user.email=daniel.navarro@pucp.edu.pe
+user.name=Daniel Navarro
+``` 
+
+Esta información queda asociada posteriormente a los **commits** realizados. 
 
 ---
 
-# 🗂️ 5. ¿Cómo funciona Git?
+# Funcionamiento del Git 
+Todo comienza en el Working Directory o directorio de trabajo. Esta es  la carpeta local en nuestras computadoras donde abrimos, editamos y guardamos los archivos de manera normal. 
 
-Git organiza los cambios de un proyecto en diferentes etapas.
+Una vez que realizamos cambios en este directorio, no se guardan automáticamente en el historial. Primero debemos pasarlos al Staging Area o área de preparación. En esta etapa seleccionamos específicamente qué modificaciones queremos incluir en nuestro próximo guardado 
+Para enviar un archivo a esta zona usamos el comando ``` git add nombre_archivo ``` , o si queremos agregar todos los cambios modificados de una sola vez, utilizamos  ``` git add ```  ..
 
-```text
-┌──────────────────┐
-│ Working Directory│
-│                  │
-│ Archivos editados│
-└────────┬─────────┘
-         │ git add
-         ▼
-┌──────────────────┐
-│   Staging Area   │
-│                  │
-│ Cambios preparados│
-└────────┬─────────┘
-         │ git commit
-         ▼
-┌──────────────────┐
-│ Local Repository │
-│                  │
-│ Historial Git    │
-└────────┬─────────┘
-         │ git push
-         ▼
-┌──────────────────┐
-│Remote Repository │
-│                  │
-│      GitHub      │
-└──────────────────┘
-```
+Cuando ya tenemos los archivos listados en el área de preparación, el siguiente paso es registrarlos en el repositorio local. Al ejecutar el comando git commit -m "Descripción del cambio", lo que hacemos es tomar una especie de fotografía o captura del estado actual del proyecto. Esta captura se almacena de forma permanente en el historial interno de Git dentro de nuestra computadora, funcionando como un punto de restauración seguro de nuestro trabajo.
 
-### 🧠 Interpretación
+Finalmente, para que el resto del equipo pueda ver los avances o para tener un respaldo en la nube, enviamos este historial local al Remote Repository o repositorio remoto. Utilizando el comando git push, todos los commits que guardamos en la computadora se sincronizan y se suben a la plataforma de GitHub.
 
-### 1. Working Directory
+ Flujo de trabajo utilizado
+Durante el desarrollo de la sesión, aplicamos estas etapas teóricas mediante un ciclo de trabajo constante. Antes de registrar cualquier modificación, comprobamos que siempre es muy recomendable iniciar verificando cómo se encuentra el proyecto utilizando el comando git status. Esto nos resultó bastante útil porque nos permite identificar de manera clara qué archivos hemos modificado, cuáles son totalmente nuevos (y Git todavía no los rastrea) y cuáles ya están preparados para el commit.
 
-Es la carpeta donde se trabaja normalmente y se modifican los archivos.
-
-### 2. Staging Area
-
-Permite seleccionar qué modificaciones serán incluidas en el próximo commit.
-
-```bash
-git add nombre_archivo
-```
-
-Para agregar todos los cambios:
-
-```bash
-git add .
-```
-
-### 3. Local Repository
-
-Al realizar un commit se almacena un **snapshot o estado del proyecto** dentro del historial local de Git.
-
-```bash
-git commit -m "Descripción del cambio"
-```
-
-### 4. Remote Repository
-
-Finalmente, los commits locales pueden enviarse al repositorio remoto almacenado en GitHub.
-
-```bash
-git push
-```
-
----
-
-# 🚦 6. Flujo de trabajo utilizado
-
-Durante el laboratorio se aplicó el siguiente flujo:
-
-```text
-Modificar
-   ↓
-git status
-   ↓
-git add .
-   ↓
-git commit
-   ↓
-git push
-   ↓
-GitHub actualizado ✅
-```
-
-Antes de registrar un cambio es recomendable verificar el estado del repositorio:
-
-```bash
-git status
-```
-
-Este comando permite identificar:
-
-* archivos modificados;
-* archivos nuevos;
-* archivos todavía no rastreados;
-* archivos preparados para commit.
-
-Después se agregan los cambios:
-
-```bash
-git add .
-```
-
-Se crea un commit:
-
-```bash
-git commit -m "Actualización del informe Lab01"
-```
-
-Y finalmente:
-
-```bash
-git push
-```
-
----
+Después de modificar nuestros archivos y verificar su estado, el flujo estándar que seguimos consistió en agregar los cambios con git add .. Luego, procedimos a empaquetarlos en una nueva versión ejecutando git commit -m "Actualización del informe Lab01", asegurándonos siempre de dejar un mensaje claro. Como último paso de esta rutina, utilizamos git push para sincronizar nuestro repositorio local con GitHub, logrando que nuestro trabajo en la nube quedara completamente actualizado.
+--- 
 
 # 🕒 7. Los commits como historial del proyecto
 
