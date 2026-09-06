@@ -1,16 +1,9 @@
-# Resumen del laboratorio 01:  Git, GitHub, VS Code 
-
-<p align="center">
-  <strong>Ingeniería Biomédica | Herramientas para desarrollo y documentación colaborativa</strong>
-</p>
-
-
+# <p align="center"> Resumen del laboratorio 01:  Git, GitHub, VS Code 
+</p> 
 ---
 
 ## Objetivo del laboratorio : 
-En este laboratorio, nuestro objetivo fue familiarizarnos con las herramientas usadas para para el desarrollo, documentación y gestión de proyectos de ingeniería.
-
-
+En este laboratorio, nuestro objetivo fue familiarizarnos con las herramientas usadas para para el desarrollo, documentación y gestión de proyectos de ingeniería
 ---
 
 # Herramientas empleadas: 
