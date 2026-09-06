@@ -31,6 +31,7 @@ Para ello abrimos el CMD (Símbolo del sistema) y ejecutamos el siguiente comand
 ```Símbolo del sistema
 git --version
 ```
+Esto fue lo que se mostro en la terminal: 
 ```Símbolo del sistema
 git --version 2.55.0.windows.5
 ``` 
@@ -39,7 +40,7 @@ git --version 2.55.0.windows.5
 # Configuración inicial de Git
 
 Git necesita asociar los cambios realizados con un usuario. Para ello se configuraron el nombre y el correo electrónico.
-
+Acá se muestra cual seria la configuración que hice en la terminal para enlazar el Git a mi cuenta: 
 ```Símbolo del sistema
 C:\Users\User>git config --global user.name "Daniel Navarro"
 
@@ -51,7 +52,7 @@ La configuración puede verificarse utilizando:
 ```Símbolo del sistema
 git config --global --list
 ```
-
+Luego de escribir dicho comando, se mostraría de esta forma ya actualizado: 
 ```Símbolo del sistema 
 C:\Users\User>git config --global --list
 user.email=daniel.navarro@pucp.edu.pe
