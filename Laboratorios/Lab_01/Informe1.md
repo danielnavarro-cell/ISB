@@ -1,26 +1,16 @@
 # <p align="center"> Resumen del laboratorio 01 
 </p> 
----
 
 # Objetivo del laboratorio : 
-
 En este laboratorio, nuestro objetivo fue familiarizarnos con las herramientas usadas para para el desarrollo, documentación y gestión de proyectos de ingeniería
-
----
-
 # Herramientas empleadas: 
 En la sesión iniciamos descargando Git y creándonos una cuenta de GitHub, a pesar de que suelen utilizarse juntos,  cumplen funciones diferentes.
 Podemos definir Git como un sistema de control de versiones que registra localmente los cambios que hacemos en el proyecto. Mientras que GitHub es una plataforma donde alojamos nuestro repositorio de Git y que nos permite colaborar entre compañeros. 
 Por otro lado, también nos enseñaron el uso de VS CODE para las modificaciones sobre nuestro repositorio, esta herramienta es el entorno de desarrollo (IDE) desde donde editamos el código, ejecutamos comandos y administramos GIT. 
 Por útlimo, tambien nos mencionaron hacer del Markdown que es el lenguaje con el que estructuramos y redactamos la documentación en los archivos .md . 
 En conclusión, mediante Git podemos controlar la historia del proyecto en nuestras computadoras de forma local y GitHub nos permite guardar y compartir esas modificaciones en la nube para la contribución de todos los miembros de un equipo. 
-
----
-
 # Instalación y verificación de Git
-
 En la sesión, se nos recomendó que antes de trabajar con repositorios verificar que Git estuviera correctamente instalado.
-
 Para ello abrimos el CMD (Símbolo del sistema) y ejecutamos el siguiente comando: 
 
 ```Símbolo del sistema
