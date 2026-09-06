@@ -89,12 +89,11 @@ Por ejemplo:
 
 Respecto al lenguaje Markdown utiliza símbolos sencillos para generar documentos estructurados. Por ejemplo, si queremos organizar la cabecera del documento podemos usar estos comandos 
 
-``` ## Encabezados , # Título principal ,  ### Sección,  #### Subsección ```
+ ## Encabezados , # Título principal ,  ### Sección,  #### Subsección 
 Si queremos escribir con algún detalle que resalte lo que queremos podemos usar: 
 ```markdown
 **Texto en negrita** *Texto en cursiva* . `código en línea`
 ```
-
 
 
 
