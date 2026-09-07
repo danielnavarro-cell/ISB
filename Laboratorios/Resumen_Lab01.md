@@ -172,13 +172,13 @@ Durante el laboratorio se identificaron algunas prácticas importantes:
 
 # 🎓 Conclusiones 
 
-Git, GitHub, Visual Studio Code y Markdown constituyen un conjunto de herramientas complementarias para el desarrollo organizado de proyectos tecnológicos.
+- Git, GitHub, Visual Studio Code y Markdown constituyen un conjunto de herramientas complementarias para el desarrollo organizado de proyectos tecnológicos.
 
-**Git** permite mantener un historial controlado de cambios, mientras que **GitHub** facilita el almacenamiento remoto y el trabajo colaborativo. Por otro lado, **VS Code** se encarga de la edición y gestión del proyecto, y **Markdown** permite mantener documentación técnica ligera, estructurada y directamente integrada al repositorio.
+- **Git** permite mantener un historial controlado de cambios, mientras que **GitHub** facilita el almacenamiento remoto y el trabajo colaborativo. Por otro lado, **VS Code** se encarga de la edición y gestión del proyecto, y **Markdown** permite mantener documentación técnica ligera, estructurada y directamente integrada al repositorio.
 
-En Ingeniería Biomédica, esta metodología resulta importante debido a que los proyectos suelen integrar diferentes componentes como hardware, software, procesamiento de datos y documentación experimental que deben mantenerse organizados y ser reproducibles.
+- En Ingeniería Biomédica, esta metodología resulta importante debido a que los proyectos suelen integrar diferentes componentes como hardware, software, procesamiento de datos y documentación experimental que deben mantenerse organizados y ser reproducibles.
 
-El laboratorio permitió establecer un flujo de trabajo que podrá utilizarse durante el curso para documentar progresivamente los futuros desarrollos y mantener un historial claro de su evolución.
+- El laboratorio permitió establecer un flujo de trabajo que podrá utilizarse durante el curso para documentar progresivamente los futuros desarrollos y mantener un historial claro de su evolución.
 
 
 
