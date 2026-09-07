@@ -110,7 +110,7 @@ Luego respecto al área de preparación, en lugar de usar el comando git add ., 
 💡 **También podemos realizar el flujo de Git mediante comandos o utilizando la interfaz gráfica de VS Code.**
 
 
-# ☁️ Uso de GitHub como repositorio remoto 🌎
+# 🌎 Uso de GitHub como repositorio remoto 
 
 GitHub permite almacenar el proyecto de forma remota y mantener una estructura organizada de archivos y directorios en el cual se puede añadir a más personas para un trabajo colaborativo.
 
@@ -170,7 +170,7 @@ Durante el laboratorio se identificaron algunas prácticas importantes:
 * 🔄 Realizar sincronizaciones frecuentes con el repositorio remoto.
 
 
-# 🎓 Conclusiones 🚀
+# 🎓 Conclusiones 
 
 Git, GitHub, Visual Studio Code y Markdown constituyen un conjunto de herramientas complementarias para el desarrollo organizado de proyectos tecnológicos.
 
