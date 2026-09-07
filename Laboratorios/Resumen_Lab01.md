@@ -18,10 +18,10 @@ Por último, también nos mencionaron hacer del Markdown que es el lenguaje con 
 
 En conclusión, mediante Git podemos controlar la historia del proyecto en nuestras computadoras de forma local y GitHub nos permite guardar y compartir esas modificaciones en la nube para la contribución de todos los miembros de un equipo.
 
-> 💡 **Git → Controla los cambios localmente 💻**
-> ☁️ **GitHub → Guarda y comparte los cambios en la nube 🌎**
-> 🛠️ **VS Code → Permite editar y administrar el proyecto**
-> 📝 **Markdown → Permite documentar el proyecto**
+- 💡 **Git → Controla los cambios localmente 💻**
+- ☁️ **GitHub → Guarda y comparte los cambios en la nube 🌎**
+- 🛠️ **VS Code → Permite editar y administrar el proyecto**
+- 📝 **Markdown → Permite documentar el proyecto**
 
 
 # ⚙️ Instalación y verificación de Git 🔍
@@ -40,7 +40,6 @@ Esto fue lo que se mostró en la terminal:
 git --version 2.55.0.windows.5
 ```
 
----
 
 # 👤 Configuración inicial de Git ⚙️
 
@@ -70,9 +69,8 @@ user.name=Daniel Navarro
 
 📌 Esta información queda asociada posteriormente a los **commits** realizados.
 
----
 
-# 🔄 Funcionamiento del Git 💻
+# 💻 Funcionamiento del Git 
 
 Todo comienza en el directorio de trabajo. Esta es la carpeta local en nuestras computadoras donde abrimos, editamos y guardamos los archivos de manera normal.
 
@@ -98,7 +96,6 @@ Finalmente, para que el resto del equipo pueda ver los avances o para tener un r
 🌎 GitHub
 ```
 
----
 
 # 🚀 Flujo de trabajo utilizado 🔄
 
@@ -110,9 +107,8 @@ Por otro lado, también aprendimos que se puede realizar exactamente este mismo 
 
 Luego respecto al área de preparación, en lugar de usar el comando git add ., solo pasamos el cursor sobre la lista de cambios y hacemos clic en el ícono del símbolo + (Stage All Changes). Esto mueve nuestros archivos a la sección de cambios preparados. A continuación, reemplazamos el comando del commit escribiendo nuestro mensaje descriptivo (como "Actualización del informe Lab01") directamente en la caja de texto superior y presionando el botón Commit. Como último paso, para sustituir el git push, simplemente hacemos clic en el botón azul Sync Changes (Sincronizar cambios) que aparece en el mismo panel.
 
-> 💡 **También podemos realizar el flujo de Git mediante comandos o utilizando la interfaz gráfica de VS Code.**
+💡 **También podemos realizar el flujo de Git mediante comandos o utilizando la interfaz gráfica de VS Code.**
 
----
 
 # ☁️ Uso de GitHub como repositorio remoto 🌎
 
@@ -120,16 +116,15 @@ GitHub permite almacenar el proyecto de forma remota y mantener una estructura o
 
 En la sesión se comentó que es muy importante tener un archivo `README.md` que sirva de documentación de nuestro repositorio.
 
-📂 **Por ejemplo:**
+ **Por ejemplo:**
 
 * 💻 `Software/README.md` : librerías, dependencias y funcionamiento del software.
 * ⚙️ `Hardware/README.md` : componentes y características técnicas.
 * 🧪 `Laboratorios/Lab01/README.md` : documentación del laboratorio.
 * 📚 `README.md` principal : descripción general del proyecto o curso.
 
----
 
-# 📝 Markdown para documentación técnica ✨
+# 📝 Markdown para documentación técnica 
 
 Respecto al lenguaje Markdown utiliza símbolos sencillos para generar documentos estructurados. Por ejemplo, si queremos escribir con algún detalle que resalte lo que mencionamos en el texto podemos usar:
 
@@ -137,13 +132,6 @@ Respecto al lenguaje Markdown utiliza símbolos sencillos para generar documento
 
 `*texto en cursiva :)*`
 
-Y se vería de esta forma:
-
-**hola mundo**
-
-*Mejoras del lab1*
-
----
 
 Por otro lado, si queremos organizar la cabecera del documento podemos usar:
 
@@ -167,9 +155,9 @@ Y nos daría como resultado esta organización:
 
 #### Subsección
 
----
 
-# ⭐ Buenas prácticas aprendidas 📌
+
+# 📌 Buenas prácticas aprendidas 
 
 Durante el laboratorio se identificaron algunas prácticas importantes:
 
@@ -181,7 +169,6 @@ Durante el laboratorio se identificaron algunas prácticas importantes:
 * 🎞️ Incorporar imágenes o GIF cuando se documenta un procedimiento.
 * 🔄 Realizar sincronizaciones frecuentes con el repositorio remoto.
 
----
 
 # 🎓 Conclusiones 🚀
 
@@ -193,17 +180,6 @@ En Ingeniería Biomédica, esta metodología resulta importante debido a que los
 
 El laboratorio permitió establecer un flujo de trabajo que podrá utilizarse durante el curso para documentar progresivamente los futuros desarrollos y mantener un historial claro de su evolución.
 
----
-
-<div align="center">
-
-## 🚀 ¡Fin del Laboratorio 01! 🧪
-
-### 💻 Git • ☁️ GitHub • 🛠️ VS Code • 📝 Markdown
-
-⭐ **Ingeniería Biomédica** ⭐
-
-</div>
 
 
 #  Referencias y recursos
