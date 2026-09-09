@@ -2,7 +2,7 @@
 # Respuestas a las preguntas:
 Q1. Which are the significant frequencies for EMG acquisitions? Are they the same in all body areas such as facial
 area?
-- La banda que usan es de normalmente 20 a 450 Hz, porque esta es la que permite ver la información relevante de los movimientos musculares. Pero no son las mismas en todo el cuerpo por lo que diferentes músculos pueden tener diferentes frecuencias, ya que estas cambian también 
+- La banda que usan es de normalmente 20 a 450 Hz, porque esta es la que permite ver la información relevante de los movimientos musculares. Pero no son las mismas en todo el cuerpo por lo que diferentes músculos pueden tener diferentes frecuencias, ya que estas cambian también. 
 
 Q2. Which kind of filter is essential when working with EMG signals? Why do we need to apply such a filter?
 - Es importante utilizar un filtro pasa banda para conservar las frecuencias propias de la señal EMG y eliminar aquellas que corresponden principalmente a ruido.
@@ -12,9 +12,7 @@ Q3. How does the amplitude differ in each muscular contraction? Is there a diffe
 También puede variar dependiendo de la ubicación del músculo, su tamaño, la posición de los electrodos y la distancia entre ellos. 
 Por ello, las amplitudes obtenidas en músculos faciales pueden ser diferentes de las obtenidas en músculos de brazos o piernas.
 
-Q4. Show a screenshot of a relevant portion of Electromyography (EMG) data within the experiment proposed on
-- Section D of a facial muscle of interest. Does this signal correspond to what you expected? Why? Which
-emotion and action did you perform to trigger the muscle? Which muscle did you trigger?
+Q4. Show a screenshot of a relevant portion of Electromyography (EMG) data within the experiment proposed on Section D of a facial muscle of interest. Does this signal correspond to what you expected? Why? Which emotion and action did you perform to trigger the muscle? Which muscle did you trigger?
 
 Q5. To the best of your knowledge, does the EMG amplitude equal to the amount of force that you have generated
 with your muscle?
