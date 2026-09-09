@@ -1,4 +1,4 @@
-# 🦾 Señales EMG — Movimiento 
+#  Señales EMG — Movimiento 
 
 ## 🚶 Movimiento leve
 
