@@ -1,5 +1,5 @@
-'![Quizz](Laboratorios/Lab03/Imagenes/Preguntas_bitalino.jpg)'
-Respuestas a las preguntas:
+
+# Respuestas a las preguntas:
 Q1. Which are the significant frequencies for EMG acquisitions? Are they the same in all body areas such as facial
 area?
 - La banda que usan es de normalmente 20 a 450 Hz, porque esta es la que permite ver la información relevante de los movimientos musculares. Pero no son las mismas en todo el cuerpo por lo que diferentes músculos pueden tener diferentes frecuencias, ya que estas cambian también 
