@@ -21,9 +21,13 @@ Respecto a la señal transformada al dominio de la frecuencia por la FFT, vemos 
 ## Gráficas de Kimberly
 
 <img width="1590" height="495" alt="image" src="https://github.com/user-attachments/assets/41071a89-b29f-4091-a4a1-4f3c1cc60087" />
-En el dominio del tiempo la señal muestra una línea base estable aproximadamente en el valor de 506, tambien presenta fluctuaciones minimas entre 504 y 510, re
+En el dominio del tiempo la señal muestra una línea base estable aproximadamente en el valor de 506, tambien presenta fluctuaciones mínimas entre 504 y 510, representan el ruido térmico del instrumento y de cuantización del sistema. 
+Respecto a la FFT, vemos que el espectro se mantiene plano con magnitudes bajas alrededor los -50 db, lo cual verifica la ausencia de actividad muscular. 
 
 
-<img width="1590" height="495" alt="image" src="https://github.com/user-attachments/assets/a281a1cf-47da-4042-8617-27e42113191a" />
+<img width="1590" height="495" alt="image" src="https://github.com/user-attachments/assets/a281a1cf-47da-4042-8617-27e42113191a" /> 
+Para este ploteo se identifican 3 ráfagas  correspondientes a contracciones musculares submáximas. La amplitud pico a pico se expande, alcanzando valores entre 460 y 560, lo que refleja un reclutamiento espacial inicial donde el sistema nervioso activa un grupo limitado de motoneuronas.
+En el dominio de la frecuencia, notamos como la energía se concentra en la banda de 20 Hz y 150 Hz que pertenece a la banda fisiológica de la electromiografía. 
 
 <img width="1590" height="495" alt="image" src="https://github.com/user-attachments/assets/1b2bbe64-7c85-4616-b026-6ebb46dc0438" />
+En el dominio del tiempo, notamos la amplitud pico a pico oscila entre 350 y 650 debido a incrementar la fuerza sostenida de la contracción. Y por otro lado, en el dominio de la frecuencia se deberia de tener una densidad de potencia maxima y definida.   
