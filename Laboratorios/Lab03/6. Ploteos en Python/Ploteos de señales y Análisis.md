@@ -2,7 +2,7 @@
 
 Aquí colocamos las gráficas de las señales EMG de Adriana y de Kimberly, también se hizo un ploteo de la FFT.
 
-## Gráficas de Adriana
+## Gráficas de Sujeto 1 (Adriana) - Biceps 
 
 <img width="1590" height="495" alt="image" src="https://github.com/user-attachments/assets/dae2f268-7726-40bb-ba63-68195a7c3d6d" /> 
 
@@ -18,7 +18,7 @@ Y por el lado del dominio de la frecuencia, se observa que la energía espectral
 En el dominio del tiempo, la amplitud pico a pico es mayor y oscila entre 150 a 800, esta ensanchamiento indica que el músculo ha reclutado una cantidad masiva de unidades motoras disparando a alta frecuencia para sostener un esfuerzo físico considerable. 
 Respecto a la señal transformada al dominio de la frecuencia por la FFT, vemos que esta definida y existe un pico pronunciado alrededor de los 50-100 Hz y la magnitud total en decibelios es superior en todo el espectro fisiológico en comparación con las pruebas anteriores. 
 
-## Gráficas de Kimberly
+## Gráficas del sujeto 2 (Kimberly)
 
 <img width="1590" height="495" alt="image" src="https://github.com/user-attachments/assets/41071a89-b29f-4091-a4a1-4f3c1cc60087" />
 En el dominio del tiempo la señal muestra una línea base estable aproximadamente en el valor de 506, tambien presenta fluctuaciones mínimas entre 504 y 510, representan el ruido térmico del instrumento y de cuantización del sistema. 
@@ -30,4 +30,4 @@ Para este ploteo se identifican 3 ráfagas  correspondientes a contracciones mus
 En el dominio de la frecuencia, notamos como la energía se concentra en la banda de 20 Hz y 150 Hz que pertenece a la banda fisiológica de la electromiografía. 
 
 <img width="1590" height="495" alt="image" src="https://github.com/user-attachments/assets/1b2bbe64-7c85-4616-b026-6ebb46dc0438" />
-En el dominio del tiempo, notamos la amplitud pico a pico oscila entre 350 y 650 debido a incrementar la fuerza sostenida de la contracción. Y por otro lado, en el dominio de la frecuencia se deberia de tener una densidad de potencia maxima y definida.   
+En el dominio del tiempo, notamos la amplitud pico a pico oscila entre 350 y 650 debido a incrementar la fuerza sostenida de la contracción. Y por otro lado, en el dominio de la frecuencia se deberia de tener una densidad de potencia maxima y definida. Sin embargo, al ser otro grupo muscular se muestra un pico menor o más atenuado que en comparacion con el sujeto 1 donde se evalua el bicep.
