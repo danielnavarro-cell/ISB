@@ -21,6 +21,8 @@ Respecto a la señal transformada al dominio de la frecuencia por la FFT, vemos 
 ## Gráficas de Kimberly
 
 <img width="1590" height="495" alt="image" src="https://github.com/user-attachments/assets/41071a89-b29f-4091-a4a1-4f3c1cc60087" />
+En el dominio del tiempo la señal muestra una línea base estable aproximadamente en el valor de 506, tambien presenta fluctuaciones minimas entre 504 y 510, re
+
 
 <img width="1590" height="495" alt="image" src="https://github.com/user-attachments/assets/a281a1cf-47da-4042-8617-27e42113191a" />
 
