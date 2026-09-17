@@ -1,6 +1,6 @@
 # Resumen de la sesión de laboratorio – Señal ECG
 --- 
-Durante la sesión se realizaron registros electrocardiográficos utilizando las derivaciones de Einthoven DI, DII y DIII. A partir de la configuración inicial, para adquirir la derivación DII se intercambiaron las posiciones del electrodo positivo (rojo) y del electrodo de referencia (blanco). Posteriormente, para obtener la derivación DIII, se intercambiaron las posiciones del electrodo negativo (negro) y del electrodo de referencia (blanco) respecto a la configuración utilizada en DII. De esta manera, se modificó la configuración de los electrodos para registrar las distintas derivaciones bipolares durante la práctica. Tambien se puede representar según la figura 1. 
+Durante la sesión se realizaron registros electrocardiográficos utilizando las derivaciones de Einthoven DI, DII y DIII. A partir de la configuración inicial, para adquirir la derivación DII se intercambiaron las posiciones del electrodo positivo (rojo) y del electrodo de referencia (blanco). Posteriormente, para obtener la derivación DIII, se intercambiaron las posiciones del electrodo negativo (negro) y del electrodo de referencia (blanco) respecto a la configuración utilizada en DII [1]. De esta manera, se modificó la configuración de los electrodos para registrar las distintas derivaciones bipolares durante la práctica. También se puede representar las derivaciones según la figura 1. 
 
 ![imagenes referencial de derivaciones ](imagen_/Limb_leads_of_EKG.png) 
 <div align="center"> Figura 1. Derivaciones bipolares y unipolares 
@@ -14,3 +14,5 @@ A continuación, se realizó una prueba de hipoventilación, en la que el partic
 Finalmente, se efectuó una actividad aeróbica durante aproximadamente 5–10 minutos. Inmediatamente después del ejercicio se registraron nuevamente las tres derivaciones para observar los cambios producidos en la señal EKG, utilizando aproximadamente 30 segundos de intervalo entre cada derivación.
 
 De esta manera, el laboratorio permitió comparar experimentalmente el ECG obtenido en reposo, hiperventilación, hipoventilación y después de actividad física, observando principalmente las variaciones en la frecuencia cardíaca, la separación entre los complejos QRS y la morfología general de la señal entre las diferentes derivaciones.
+Referencias: 
+[1] M. Proença and K. Mrotzeck, BITalino (r)evolution Lab Guide: Home-Guide #2—Electrocardiography (ECG), Exploring Cardiac Signals at the Skin Surface. PLUX – Wireless Biosignals, S.A., 2021. [Online]. Available: BITalino website. [Accessed: Sep. 16, 2026]. 
