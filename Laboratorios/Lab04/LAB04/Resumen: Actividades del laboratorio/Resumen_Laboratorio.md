@@ -1,5 +1,5 @@
-Resumen de la sesión de laboratorio – Señal EKG
-
+# Resumen de la sesión de laboratorio – Señal EKG
+--- 
 Durante la sesión se realizó la adquisición de señales electrocardiográficas en las derivaciones DI, DII y DIII, evaluando cómo cambia el registro del EKG ante distintas condiciones fisiológicas.
 
 Primero se obtuvo una lectura basal de aproximadamente 30 segundos para cada una de las tres derivaciones, con el participante en reposo. Esta etapa permitió disponer de una señal de referencia antes de aplicar cualquier modificación en la respiración o realizar actividad física.
