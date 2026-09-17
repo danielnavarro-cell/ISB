@@ -15,5 +15,6 @@ Finalmente, se efectuó una actividad aeróbica durante aproximadamente 5–10 m
 
 De esta manera, el laboratorio permitió comparar experimentalmente el ECG obtenido en reposo, hiperventilación, hipoventilación y después de actividad física, observando principalmente las variaciones en la frecuencia cardíaca, la separación entre los complejos QRS y la morfología general de la señal entre las diferentes derivaciones.
 
----  Referencias: 
+--- 
+### Referencias: 
 [1] M. Proença and K. Mrotzeck, BITalino (r)evolution Lab Guide: Home-Guide #2—Electrocardiography (ECG), Exploring Cardiac Signals at the Skin Surface. PLUX – Wireless Biosignals, S.A., 2021. [Online]. Available: BITalino website. [Accessed: Sep. 16, 2026]. 
