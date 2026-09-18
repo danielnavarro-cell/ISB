@@ -3,7 +3,7 @@ https://colab.research.google.com/drive/17pdUPH7VJ1PXXCR-wMN52AsBbCX_hIyR?usp=sh
 
 En este link se encuentra nuestro Colab en el cual realizamos las pruebas 
 para generar los ploteos correspondientes para cada grafica. 
-imero se identificó el canal donde se encontraba registrada la señal ECG y se extrajeron sus valores digitales. Como estos datos provenían directamente del conversor analógico-digital del BITalino, fue necesario convertirlos a voltaje y posteriormente a milivoltios, considerando la resolución del ADC, el voltaje de alimentación y la ganancia del sensor.
+Primero se identificó el canal donde se encontraba registrada la señal ECG y se extrajeron sus valores digitales. Como estos datos provenían directamente del conversor analógico-digital del BITalino, fue necesario convertirlos a voltaje y posteriormente a milivoltios, considerando la resolución del ADC, el voltaje de alimentación y la ganancia del sensor.
 
 Luego se generó un vector de tiempo usando la frecuencia de muestreo de 1000 Hz, de modo que cada muestra pudiera ubicarse correctamente en segundos. Después, la señal fue filtrada con un filtro pasa banda entre 0.5 y 40 Hz para reducir la deriva de la línea base y parte del ruido de alta frecuencia, conservando principalmente la información útil del ECG.
 
