@@ -718,7 +718,7 @@ $$
 
 ---
 
-## 22. Título y etiquetas
+##  Título y etiquetas
 
 ```python
 plt.title(
@@ -748,7 +748,7 @@ se etiquetan los ejes.
 
 ---
 
-## 23. Elementos visuales de la gráfica
+## Elementos visuales de la gráfica
 Esta parte es útil para facilitar la lectura de tiempo y amplitud, ya que se agregan como cuadriculas. 
 
 ```python
@@ -778,7 +778,7 @@ Esto permite distinguir mejor las deflexiones positivas y negativas del ECG.
 
 ---
 
-## 24. Visualización final
+## Visualización final
 
 ```python
 plt.tight_layout()
@@ -791,7 +791,7 @@ plt.show()
 
 ---
 
-## 25. Procesamiento de las tres derivaciones
+## Procesamiento de las tres derivaciones
 
 Una vez definida la función, se utiliza para procesar cada derivación:
 Esta parte es la que se cambia para analizar las gráficas tanto reposo, hipoventilación e hiperventilación, ya que la lógica y el filtrado será el mismo para poder obtener las gráficas presentadas. 
