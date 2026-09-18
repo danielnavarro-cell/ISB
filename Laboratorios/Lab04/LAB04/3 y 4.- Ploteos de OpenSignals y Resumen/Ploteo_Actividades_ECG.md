@@ -6,7 +6,7 @@ El registro fue realizado durante ciclos de inhalación, mantenimiento y exhalac
 
 Las señales ECG fueron adquiridas en las derivaciones DI, DII y DIII, considerando un periodo de reposo entre cada registro.
 
-### Intento D1
+### Derivacion 1
 
 Archivo correspondiente:
 
@@ -14,7 +14,7 @@ Archivo correspondiente:
 
 ![Hiperventilación - D1](./imagenes_opensignals/Hiperventilacion_D1.jpeg)
 
-### Intento D2
+### Derivacion 2
 
 Archivo correspondiente:
 
@@ -22,7 +22,7 @@ Archivo correspondiente:
 
 ![Hiperventilación - D2](./imagenes_opensignals/Hiperventilacion_D2.jpeg)
 
-### Intento D3
+### Derivacion 3
 
 Archivo correspondiente:
 
@@ -36,7 +36,7 @@ Archivo correspondiente:
 
 El registro fue realizado manteniendo voluntariamente la respiración durante el mayor tiempo posible. Posteriormente, se permitió la exhalación y recuperación antes de realizar el siguiente intento.
 
-### Intento D1
+### Derivacion 1 
 
 Archivo correspondiente:
 
@@ -44,7 +44,7 @@ Archivo correspondiente:
 
 ![Hipoventilación - D1](./imagenes_opensignals/Hipoventilacion_D1.jpeg)
 
-### Intento D2
+### Derivacion 2
 
 Archivo correspondiente:
 
@@ -52,7 +52,7 @@ Archivo correspondiente:
 
 ![Hipoventilación - D2](./imagenes_opensignals/Hipoventilacion_intentoB.jpeg)
 
-### Intento D3
+### Derivacion 3
 
 Archivo correspondiente:
 
@@ -66,7 +66,7 @@ Archivo correspondiente:
 
 Las señales ECG fueron registradas inmediatamente después de realizar actividad aeróbica, con el objetivo de observar los cambios producidos por el incremento de la frecuencia cardíaca.
 
-### Intento 1
+### Derivacion 1 
 
 Archivo correspondiente:
 
@@ -74,7 +74,7 @@ Archivo correspondiente:
 
 ![Actividad aeróbica - intento 1](./imagenes_opensignals/Mateo1.jpeg)
 
-### Intento 2
+### Derivacion 2
 
 Archivo correspondiente:
 
@@ -82,7 +82,7 @@ Archivo correspondiente:
 
 ![Actividad aeróbica - intento 2](./imagenes_opensignals/Mateo2.jpeg)
 
-### Intento 3
+### Derivacion 3
 
 Archivo correspondiente:
 
