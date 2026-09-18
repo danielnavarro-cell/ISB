@@ -7,9 +7,8 @@ import matplotlib.pyplot as plt
 from scipy.signal import butter, filtfilt, find_peaks
 
 
-# ============================================================
 # 1. SUBIR LOS ARCHIVOS
-# ============================================================
+
 
 # Primero subimos los tres archivos correspondientes
 # a las derivaciones D1, D2 y D3 durante ACTIVIDAD AERÓBICA.
@@ -31,9 +30,8 @@ for f in filenames:
     print("-", f)
 
 
-# ============================================================
 # 2. IDENTIFICAR D1, D2 Y D3
-# ============================================================
+
 
 # Identificamos automáticamente qué archivo corresponde
 # a cada derivación utilizando el nombre del archivo.
@@ -49,9 +47,9 @@ print("Derivación II :", file_D2)
 print("Derivación III:", file_D3)
 
 
-# ============================================================
+
 # 3. PARÁMETROS DEL BITALINO
-# ============================================================
+
 
 # Parámetros del sistema BITalino utilizado
 # para adquirir las señales ECG.
@@ -62,9 +60,8 @@ VCC = 3.3       # Voltaje de alimentación (V)
 G = 1100        # Ganancia del sensor ECG
 
 
-# ============================================================
+
 # 4. FUNCIÓN PARA PROCESAR EL ECG
-# ============================================================
 
 # Esta función realiza:
 #
@@ -80,9 +77,8 @@ G = 1100        # Ganancia del sensor ECG
 
 def procesar_ecg(filename, titulo):
 
-    # --------------------------------------------------------
     # Lectura del archivo
-    # --------------------------------------------------------
+  
 
     # Las líneas que comienzan con "#"
     # corresponden al encabezado generado por OpenSignals
@@ -100,7 +96,7 @@ def procesar_ecg(filename, titulo):
     data = data.dropna(axis=1, how='all')
 
 
-    # --------------------------------------------------------
+    
     # Extracción del ECG
 
     # El ECG se encuentra en la sexta columna
