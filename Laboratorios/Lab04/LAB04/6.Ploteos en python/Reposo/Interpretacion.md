@@ -27,12 +27,17 @@ Después de la R se observa una pequeña deflexión negativa correspondiente a l
 Finalmente, aparece una **onda T positiva, ancha y claramente visible**, asociada con la repolarización ventricular.
 
 --- 
+
 ## Derivación II (DII) 
 Es la derivación donde la señal eléctrica se registra con mayor intensidad. La onda R alcanza su punto más alto (aprox. 1.2 mV). La secuencia es muy completa: se nota la onda P, una ligera caída antes de la R (onda Q), la onda R alta, la S y una onda T clara y positiva.
+
 --- 
+
 ## Derivación III (DIII) 
 Es visualmente mas distinta, ya que presenta una onda R alta (0.-9 mV),  pero inmediatamente le sigue una onda S negativa muy profunda. Además, la onda T se aplana y es mucho menos evidente que en DI y DII. En esta captura la frecuencia cardíaca pareció menor, pero esto ocurrió  porque las tres derivaciones no se grabaron al mismo tiempo).
+
 --- 
+
 ## Conclusión 
 Las tres derivaciones muestran exactamente el mismo fenómeno fisiológico (la secuencia P-QRS-T del corazón latiendo). La razón por la que las ondas cambian de tamaño y forma es porque cada derivación mira el impulso eléctrico desde un ángulo distinto.
 
