@@ -818,21 +818,4 @@ De esta forma, las tres derivaciones utilizan exactamente el mismo procedimiento
 Esto permite realizar una comparación más consistente entre D1, D2 y D3.
 
 ---
-
-# Resumen del algoritmo
-
-El procesamiento implementado puede dividirse en cinco etapas principales:
-
-```text
-1. Carga de datos
-        ↓
-2. Conversión de la señal a mV
-        ↓
-3. Filtrado del ECG
-        ↓
-4. Detección de ciclos cardíacos
-        ↓
-5. Visualización de la señal
-```
-
 En resumen, el código toma los datos originales registrados por BITalino, los convierte a una señal ECG interpretable, reduce componentes de ruido mediante filtrado, identifica los complejos cardíacos principales y selecciona un segmento representativo para su visualización.
