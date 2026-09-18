@@ -25,7 +25,7 @@ En esta primera parte se importan las librerías necesarias para trabajar con lo
 
 ---
 
-## 2. Carga de los archivos
+## Carga de los archivos
 
 ```python
 uploaded = files.upload()
@@ -67,7 +67,7 @@ muestra los archivos cargados para verificar que se hayan seleccionado correctam
 
 ---
 
-## 3. Identificación automática de las derivaciones
+## Identificación automática de las derivaciones
 
 ```python
 file_D1 = [f for f in filenames if 'D1' in f.upper()][0]
@@ -114,7 +114,7 @@ print("Derivación III:", file_D3)
 
 ---
 
-## 4. Parámetros de adquisición
+##  Parámetros de adquisición
 
 ```python
 fs = 1000
@@ -187,7 +187,7 @@ La señal ECG es amplificada por el sistema de adquisición antes de ser digital
 
 ---
 
-## 5. Función general de procesamiento
+## Función general de procesamiento
 
 ```python
 def procesar_ecg(filename, titulo):
@@ -208,9 +208,9 @@ filename
 titulo
 ```
 
-`filename` corresponde al archivo que será procesado.
+`filename`   archivo que será procesado.
 
-`titulo` corresponde al nombre que aparecerá en la gráfica.
+`titulo`  nombre que aparecerá en la gráfica.
 
 La principal ventaja de utilizar una función es que el mismo procesamiento puede aplicarse a D1, D2 y D3 sin repetir todo el código.
 
