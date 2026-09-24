@@ -1,10 +1,49 @@
 Canva del primer avance de proyecto:
+# Planteamiento del problema
+
+## Arritmias cardíacas
+
+Las arritmias cardíacas son alteraciones en el ritmo normal del corazón que se producen debido a cambios en la generación o conducción de los impulsos eléctricos cardíacos. Estas alteraciones pueden ocasionar que el corazón lata demasiado rápido, demasiado lento o de manera irregular.
+
+Dentro de las arritmias, una de las más frecuentes es la fibrilación auricular (FA). Se estima que aproximadamente 50 millones de personas vivían con fibrilación auricular a nivel mundial en el año 2020 [1]. Además, algunas arritmias pueden presentarse sin síntomas evidentes. En el caso de la fibrilación auricular, se ha reportado que entre el 10 % y 40 % de los pacientes pueden ser asintomáticos, dependiendo de la población estudiada [1].
+
+Esto representa un problema debido a que una persona puede presentar una alteración en su ritmo cardíaco sin identificarla oportunamente.
+
+## Importancia del problema
+
+Las arritmias pueden estar relacionadas con diferentes complicaciones cardiovasculares. En particular, la fibrilación auricular se encuentra asociada con un mayor riesgo de accidente cerebrovascular (ACV) y otras complicaciones cardiovasculares [1].
+
+Según la guía ACC/AHA/ACCP/HRS, la fibrilación auricular se asocia con aproximadamente 2.4 veces mayor riesgo de accidente cerebrovascular [1]. Por este motivo, el análisis de la actividad eléctrica del corazón resulta importante para identificar posibles alteraciones en el ritmo cardíaco y orientar una posterior evaluación clínica.
+
+Algunos datos relevantes sobre esta problemática son:
+
+| Indicador | Dato |
+|---|---|
+| Personas con fibrilación auricular | Aproximadamente 50 millones a nivel mundial en 2020 [1] |
+| Pacientes asintomáticos | Entre 10 % y 40 %, dependiendo de la población estudiada [1] |
+| Riesgo asociado de ACV | Aproximadamente 2.4 veces mayor en personas con fibrilación auricular [1] |
+
+## Consecuencias y necesidad de una solución
+
+Las alteraciones del ritmo cardíaco pueden afectar tanto al paciente como a su entorno. A nivel individual, pueden presentarse síntomas como palpitaciones, fatiga, mareos o dificultad para respirar. Sin embargo, algunas personas pueden no presentar síntomas, lo que puede dificultar la identificación de estas alteraciones.
+
+A nivel familiar, la aparición de síntomas o complicaciones puede generar preocupación y requerir tiempo y recursos para consultas, evaluaciones y seguimiento médico. Asimismo, las enfermedades cardiovasculares representan una carga importante para los sistemas de salud [2].
+
+Por esta razón, resulta de interés contar con herramientas que permitan analizar la actividad eléctrica cardíaca e identificar posibles alteraciones en el ritmo. El electrocardiograma (ECG) permite registrar la actividad eléctrica del corazón y obtener información sobre su comportamiento.
+
+A partir de esta problemática, se plantea el uso del procesamiento digital de señales ECG como una alternativa para analizar la señal, extraer características relevantes e identificar posibles alteraciones del ritmo cardíaco que puedan requerir una evaluación posterior.
+
+
+
+
+
+
 
 
 
 ## Analísis de articulo referencial 
 ### Resumen 
-Se desarrollo una aplicación para Android que visualizaba continuamente el ECG, detectaba complejos QRS e identificaba latidos que podían considerarse anormales. La aplicación recibía datos de un sensor Shimmer por Bluetooth o reproducía registros almacenados.[1] 
+Se desarrollo una aplicación para Android que visualizaba continuamente el ECG, detectaba complejos QRS e identificaba latidos que podían considerarse anormales. La aplicación recibía datos de un sensor Shimmer por Bluetooth o reproducía registros almacenados.[4] 
 
 #### Arquitectura y metodología del sistema
 1. Adquisición de la señal ECG
@@ -14,16 +53,16 @@ Los investigadores utilizaron un sensor Shimmer para adquirir el ECG en derivaci
 
 Se implementó una adaptación del algoritmo de Pan-Tompkins. Primero, la señal pasa por un filtro pasa banda formado por filtros pasa bajas y pasa altas en cascada, cuyo objetivo es reducir el ruido antes de detectar los complejos QRS.
 Posteriormente, se aplican una derivada de cinco puntos, una elevación al cuadrado y una integración mediante una ventana móvil. La derivada resalta los cambios rápidos del QRS; la elevación al cuadrado acentúa las pendientes pronunciadas, y la integración junta esa información para localizar cada complejo.
-Para detectar los picos R, se calcula un umbral utilizando una media móvil de 150 ms, seguido de un detector de máximos de tres puntos y una verificación de los picos candidatos.[1]
+Para detectar los picos R, se calcula un umbral utilizando una media móvil de 150 ms, seguido de un detector de máximos de tres puntos y una verificación de los picos candidatos.[4]
 
 3. Creación de plantillas y extracción de características
 
 Una vez detectados los picos R, el sistema construye automáticamente dos plantillas QRS a partir de los primeros seis latidos válidos. Para ello, analiza ventanas de 400 ms centradas en cada pico R y busca latidos con áreas similares y una correlación de Pearson superior a 0.95. Las plantillas se actualizan posteriormente con los latidos clasificados como normales.
-Para analizar cada nuevo latido, extrae cuatro características: diferencia de área respecto a la plantilla, correlación máxima, duración del QRS e intervalo RR. [1]
+Para analizar cada nuevo latido, extrae cuatro características: diferencia de área respecto a la plantilla, correlación máxima, duración del QRS e intervalo RR. [4]
 
 4. Detección de anomalías y visualización
 
-Finalmente, las cuatro características se introducen en un árbol de decisiones que utiliza umbrales para identificar latidos normales o anormales y alteraciones del ritmo.[1]
+Finalmente, las cuatro características se introducen en un árbol de decisiones que utiliza umbrales para identificar latidos normales o anormales y alteraciones del ritmo.[4]
 
 #### Interfaz 
 La interfaz desarrollada en el artículo presenta la señal ECG original, los complejos QRS extraídos y las variaciones de la frecuencia cardíaca. Además, muestra la frecuencia actual, el intervalo RR en milisegundos y la cantidad de QRS reconocidos. 
@@ -75,5 +114,15 @@ A partir de sus limitaciones, planteamos incorporar una evaluación inicial de l
 ![Interfaz del sistema](image.png)
 --- 
 ## Referencia IEEE
+## Referencias
 
-[1] S. Gradl, P. Kugler, C. Lohmüller y B. M. Eskofier, “Real-time ECG monitoring and arrhythmia detection using Android-based mobile devices,” Proc. 34th Annual International Conference of the IEEE Engineering in Medicine and Biology Society, pp. 2452–2455, 2012, doi: 10.1109/EMBC.2012.6346460.
+[1] J. A. Joglar et al., “2023 ACC/AHA/ACCP/HRS Guideline for the Diagnosis and Management of Atrial Fibrillation,” *Circulation*, vol. 149, no. 1, pp. e1–e156, Jan. 2024, doi: 10.1161/CIR.0000000000001193.  
+Available: https://www.ahajournals.org/doi/10.1161/CIR.0000000000001193
+
+[2] C. W. Tsao et al., “Heart Disease and Stroke Statistics—2023 Update: A Report From the American Heart Association,” *Circulation*, vol. 147, no. 8, pp. e93–e621, Feb. 2023, doi: 10.1161/CIR.0000000000001123.  
+Available: https://www.ahajournals.org/doi/10.1161/CIR.0000000000001123
+
+[3] World Health Organization Regional Office for Europe, *What Is the Effectiveness of Systematic Population-Level Screening Programmes for Reducing the Burden of Cardiovascular Diseases?*, 2nd ed. Copenhagen, Denmark: WHO Regional Office for Europe, 2024.  
+Available: https://www.who.int/europe/publications/i/item/978-92-890-6088-2
+
+[4] S. Gradl, P. Kugler, C. Lohmüller y B. M. Eskofier, “Real-time ECG monitoring and arrhythmia detection using Android-based mobile devices,” Proc. 34th Annual International Conference of the IEEE Engineering in Medicine and Biology Society, pp. 2452–2455, 2012, doi: 10.1109/EMBC.2012.6346460.
