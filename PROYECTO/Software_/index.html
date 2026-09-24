@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Impulso · ECG</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar__title">
+    <span class="mark">ECG</span>
+    <span class="title-text">Impulso</span>
+  </div>
+  <div id="status-pill" class="status-pill status-pill--idle">sin señal cargada</div>
+</header>
+
+<main class="layout">
+
+  <aside class="panel panel--controls">
+    <h2>Fuente de la señal</h2>
+
+    <div class="control-group">
+      <label for="record-id">Registro MIT-BIH</label>
+      <input id="record-id" type="text" value="100" placeholder="ej. 100" />
+      <label for="seconds">Segundos a analizar</label>
+      <input id="seconds" type="range" min="5" max="60" value="15" />
+      <span class="range-value"><span id="seconds-out">15</span> s</span>
+      <button id="load-mitbih" class="btn btn--primary">Cargar registro</button>
+    </div>
+
+    <div class="divider"><span>o</span></div>
+
+    <div class="control-group">
+      <label for="csv-file">Archivo CSV propio</label>
+      <input id="csv-file" type="file" accept=".csv" />
+      <label for="fs-input">Frecuencia de muestreo (Hz)</label>
+      <input id="fs-input" type="number" value="360" />
+      <button id="load-csv" class="btn btn--secondary">Analizar CSV</button>
+    </div>
+
+    <p id="error-msg" class="error-msg" hidden></p>
+  </aside>
+
+  <section class="panel panel--waveform">
+    <h2>Señal ECG</h2>
+    <div class="chart-wrap">
+      <canvas id="ecg-chart"></canvas>
+    </div>
+    <div class="legend">
+      <span><i class="dot dot--raw"></i>cruda</span>
+      <span><i class="dot dot--filtered"></i>filtrada</span>
+      <span><i class="dot dot--peak"></i>pico R</span>
+    </div>
+  </section>
+
+  <section class="panel panel--metrics">
+    <h2>Características</h2>
+    <div class="stats-grid">
+      <div class="stat">
+        <span class="stat__label">frecuencia cardiaca</span>
+        <span class="stat__value" id="stat-bpm">—</span>
+        <span class="stat__unit">bpm</span>
+      </div>
+      <div class="stat">
+        <span class="stat__label">HRV (SDNN)</span>
+        <span class="stat__value" id="stat-hrv">—</span>
+        <span class="stat__unit">ms</span>
+      </div>
+      <div class="stat">
+        <span class="stat__label">latidos detectados</span>
+        <span class="stat__value" id="stat-n">—</span>
+        <span class="stat__unit"></span>
+      </div>
+      <div class="stat">
+        <span class="stat__label">latidos anómalos</span>
+        <span class="stat__value" id="stat-anom">—</span>
+        <span class="stat__unit">%</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel panel--beats">
+    <h2>Clasificación por latido</h2>
+    <div id="beat-strip" class="beat-strip"></div>
+    <div class="beat-summary">
+      <span><i class="dot dot--normal"></i>normal <b id="pct-normal">—</b></span>
+      <span><i class="dot dot--anomalo"></i>anómalo <b id="pct-anomalo">—</b></span>
+    </div>
+  </section>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
