@@ -20,3 +20,7 @@ Canva del primer avance de proyecto:
 > **Entrada → ECG → Procesamiento → Clasificación**
 
 🔗 [MIT-BIH Arrhythmia Database – PhysioNet](https://physionet.org/content/mitdb/1.0.0/)
+
+## Interfaz de la aplicación
+
+![Interfaz del sistema](image.png)
