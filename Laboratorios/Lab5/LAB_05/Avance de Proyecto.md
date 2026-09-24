@@ -11,7 +11,8 @@ Se desarrollo una aplicación para Android que visualizaba continuamente el ECG,
 
 Los investigadores utilizaron un sensor Shimmer para adquirir el ECG en derivación II y transmitirlo mediante Bluetooth a una aplicación Android. El sistema también podía procesar registros previamente almacenados, simulando su adquisición en tiempo real. 
 
-2.Filtrado digital y detección QRS
+2. Filtrado digital y detección QRS
+
 Se implementó una adaptación del algoritmo de Pan-Tompkins. Primero, la señal pasa por un filtro pasa banda formado por filtros pasa bajas y pasa altas en cascada, cuyo objetivo es reducir el ruido antes de detectar los complejos QRS.
 Posteriormente, se aplican una derivada de cinco puntos, una elevación al cuadrado y una integración mediante una ventana móvil. La derivada resalta los cambios rápidos del QRS; la elevación al cuadrado acentúa las pendientes pronunciadas, y la integración junta esa información para localizar cada complejo.
 Para detectar los picos R, se calcula un umbral utilizando una media móvil de 150 ms, seguido de un detector de máximos de tres puntos y una verificación de los picos candidatos.[1]
@@ -20,7 +21,9 @@ Para detectar los picos R, se calcula un umbral utilizando una media móvil de 1
 
 Una vez detectados los picos R, el sistema construye automáticamente dos plantillas QRS a partir de los primeros seis latidos válidos. Para ello, analiza ventanas de 400 ms centradas en cada pico R y busca latidos con áreas similares y una correlación de Pearson superior a 0.95. Las plantillas se actualizan posteriormente con los latidos clasificados como normales.
 Para analizar cada nuevo latido, extrae cuatro características: diferencia de área respecto a la plantilla, correlación máxima, duración del QRS e intervalo RR. [1]
+
 4. Detección de anomalías y visualización
+
 Finalmente, las cuatro características se introducen en un árbol de decisiones que utiliza umbrales para identificar latidos normales o anormales y alteraciones del ritmo.[1]
 
 #### Interfaz 
@@ -28,7 +31,7 @@ La interfaz desarrollada en el artículo presenta la señal ECG original, los co
                                             ![Interfaz del sistema](Interfaz_paper.png)
 
 
-Tambien los  autores incorporaron indicadores de color:
+Tambien los  autores incorporaron indicadores de color
 Verde : Latido identificado como normal.
 Rojo : Latido identificado como anormal.
 
