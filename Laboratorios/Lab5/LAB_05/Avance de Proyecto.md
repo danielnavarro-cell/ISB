@@ -35,20 +35,21 @@ Tambien los  autores incorporaron indicadores de color
 Verde : Latido identificado como normal.
 Rojo : Latido identificado como anormal.
 
-### Oportunidades de mejora 
-Finalmente, identificamos oportunidades de mejora en el artículo a partir de las limitaciones encontradas
-El algoritmo depende de la calidad de los primeros latidos, porque los utiliza para construir sus plantillas. Por eso proponemos evaluar la calidad de la señal antes de generarlas.
-
-El sistema todavía presenta falsas alarmas. Nuestra idea es que la interfaz permita visualizar los latidos sospechosos para facilitar su revisión.
-El algoritmo tiene una carga computacional elevada debido al cálculo de correlaciones. Por ello, podríamos comparar un método sencillo basado en intervalos RR con otro que también considere la morfología del QRS.
-Finalmente, como las pruebas en vivo fueron limitadas y utilizaron el sensor Shimmer, proponemos comenzar con registros anotados de PhysioNet
-
 ### Resultados 
 La aplicación muestra continuamente el ECG, los complejos QRS y las variaciones de la frecuencia cardíaca. También presenta los intervalos RR y marca los latidos normales en verde y los anormales en rojo
 evaluaron su aplicación utilizando las bases de datos MIT-BIH Arrhythmia y MIT-BIH Supraventricular Arrhythmia. En total, procesaron 256 014 anotaciones de latidos, correspondientes a 111 registros seleccionados. Las pruebas se realizaron en tres modelos de teléfonos Android y produjeron los mismos resultados en todos ellos. 
 El algoritmo logró detectar correctamente el 99.59 % de los complejos QRS en MIT-BIH Arrhythmia y el 99.58 % en MIT-BIH Supraventricular Arrhythmia. En conjunto, solo el 0.42 % de las anotaciones no fueron reconocidas. Estos resultados muestran que el sistema consiguió localizar los latidos con una alta tasa de detección. 
 Respecto a la identificación de latidos anormales, se obtuvo una sensibilidad global del 89.5 % y una especificidad del 80.6 %. Esto significa que el sistema identificó aproximadamente nueve de cada diez latidos anormales, aunque también presentó falsas alarmas al clasificar algunos latidos normales como anormales. 
 Finalmente, se comprobó que la aplicación podía procesar y visualizar el ECG en tiempo real utilizando un sensor Shimmer conectado mediante Bluetooth. Sin embargo, esta prueba en vivo se realizó únicamente con una persona sana, por lo que no permitió comprobar su rendimiento clínico en pacientes con arritmias.
+
+### Oportunidades de mejora 
+Finalmente, identificamos oportunidades de mejora en el artículo a partir de las limitaciones encontradas
+El algoritmo depende de la calidad de los primeros latidos, porque los utiliza para construir sus plantillas. Por eso proponemos evaluar la calidad de la señal antes de generarlas.
+
+El sistema todavía presenta falsas alarmas. Nuestra idea es que la interfaz permita visualizar los latidos sospechosos para facilitar su revisión.
+El algoritmo tiene una carga computacional elevada debido al cálculo de correlaciones. Por ello, podríamos comparar un método sencillo basado en intervalos RR con otro que también considere la morfología del QRS.
+Finalmente, como las pruebas en vivo fueron limitadas y utilizaron el sensor Shimmer, proponemos comenzar con registros anotados de PhysioNet 
+
 ### Conclusiones 
 Gracias al algoritmo de Pan-Tompkins, la comparación con plantillas QRS y la extracción de características temporales y morfológicas, los investigadores consiguieron integrar la adquisición, el procesamiento y la visualización de las señales en una sola aplicación.
 Una de las principales limitaciones fue la dependencia de las plantillas iniciales: cuando los primeros latidos contenían ruido o alteraciones, podían generarse plantillas inadecuadas y aumentar los errores de clasificación. Asimismo, el cálculo de correlación generó una carga computacional considerable.
