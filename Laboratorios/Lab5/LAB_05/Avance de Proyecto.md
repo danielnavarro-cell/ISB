@@ -8,7 +8,6 @@ Se desarrollo una aplicación para Android que visualizaba continuamente el ECG,
 
 #### Arquitectura y metodología del sistema
 1. Adquisición de la señal ECG
-
 Los investigadores utilizaron un sensor Shimmer para adquirir el ECG en derivación II y transmitirlo mediante Bluetooth a una aplicación Android. El sistema también podía procesar registros previamente almacenados, simulando su adquisición en tiempo real. 
 
 2. Filtrado digital y detección QRS
