@@ -27,6 +27,7 @@ Para analizar cada nuevo latido, extrae cuatro características: diferencia de �
 
 #### Interfaz 
 La interfaz desarrollada en el artículo presenta la señal ECG original, los complejos QRS extraídos y las variaciones de la frecuencia cardíaca. Además, muestra la frecuencia actual, el intervalo RR en milisegundos y la cantidad de QRS reconocidos. 
+![Interfaz del sistema](Interfaz_paper.png)
 
 
 Tambien los  autores incorporaron indicadores de color:
