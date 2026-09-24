@@ -1,4 +1,4 @@
-Canva del primer avance de proyecto:
+
 # Planteamiento del problema
 
 ## Arritmias cardíacas
