@@ -125,6 +125,17 @@ Desarrollar un sistema que integre el análisis y la visualización de señales 
 La propuesta busca facilitar una revisión más rápida y objetiva de la señal, permitiendo resaltar regiones que podrían requerir una evaluación posterior.
 
 
+# Procesamiento de la señal ECG
+
+Para el procesamiento lo que hacemos primero es una etapa previa a la identificación de las posibles alteraciones, esto más que nada porque la señal adquirida puede contener componentes no deseados los cuales interfieren en la correcta detección de latidos. Seguimos un flujo de: Preprocesamiento - Detección de picos R - Extracción de características temporales. 
+
+Durante el preprocesamiento implementamos 2 filtros: primero un filtro notch en 60Hz para poder atenuar la interferencia a la red eléctrica y luego utilizamos un filtro pasabanda Butterworth con frecuencias de corte entre 0.5 y 40 Hz para reducir los componentes de baja frecuencia que estén asociados a la deriva de línea base y los componentes de alta frecuencia no deseados también. Ambos filtros los aplicamos mediante filtrado de fase cero, para evitar el tener que introducir un desplazamiento temporal de los componentes de la señal [4][5].
+
+Ya una vez que hayamos terminado lo del prefiltrado recién realizamos la detección de los picos R, que los vamos a utilizar como puntos de referencia para determinar la ocurrencia de cada latido. La implementación inicial utiliza un detector de picos con un umbral dependiente de las características estadísticas de la señal, definido a partir de su media y desviación estándar. También se establece una distancia mínima entre picos considerando un rango esperado de frecuencia cardiaca con la finalidad de disminuir detecciones múltiples asociadas a un mismo complejo. Y es a partir de las posiciones de los picos R que realizamos el cálculo de los intervalos RR que serán definidos como diferencia temporal entre picos R consecutivos, consideramos también una frecuencia de muestreo como fs y para convertirlo a milisegundos usamos:
+
+<img width="494" height="116" alt="image" src="https://github.com/user-attachments/assets/5d539efc-45f4-4957-be14-b8a7636dbc2a" />
+
+A partir de estos intervalos RR, la implementación calcula la frecuencia cardiaca promedio (BPM) y una medida de variabilidad basada en la desviación estándar de los intervalos RR (SDNN), además del número de latidos detectados, constituyen nuestra información que va a ser utilizada en la versión inicial del sistema para evaluar la regularidad de los latidos.
 
 
 
@@ -132,7 +143,7 @@ La propuesta busca facilitar una revisión más rápida y objetiva de la señal,
 
 ## Analísis de articulo referencial 
 ### Resumen 
-Se desarrollo una aplicación para Android que visualizaba continuamente el ECG, detectaba complejos QRS e identificaba latidos que podían considerarse anormales. La aplicación recibía datos de un sensor Shimmer por Bluetooth o reproducía registros almacenados.[4] 
+Se desarrollo una aplicación para Android que visualizaba continuamente el ECG, detectaba complejos QRS e identificaba latidos que podían considerarse anormales. La aplicación recibía datos de un sensor Shimmer por Bluetooth o reproducía registros almacenados.[6] 
 
 #### Arquitectura y metodología del sistema
 1. Adquisición de la señal ECG
@@ -142,16 +153,16 @@ Los investigadores utilizaron un sensor Shimmer para adquirir el ECG en derivaci
 
 Se implementó una adaptación del algoritmo de Pan-Tompkins. Primero, la señal pasa por un filtro pasa banda formado por filtros pasa bajas y pasa altas en cascada, cuyo objetivo es reducir el ruido antes de detectar los complejos QRS.
 Posteriormente, se aplican una derivada de cinco puntos, una elevación al cuadrado y una integración mediante una ventana móvil. La derivada resalta los cambios rápidos del QRS; la elevación al cuadrado acentúa las pendientes pronunciadas, y la integración junta esa información para localizar cada complejo.
-Para detectar los picos R, se calcula un umbral utilizando una media móvil de 150 ms, seguido de un detector de máximos de tres puntos y una verificación de los picos candidatos.[4]
+Para detectar los picos R, se calcula un umbral utilizando una media móvil de 150 ms, seguido de un detector de máximos de tres puntos y una verificación de los picos candidatos.[6]
 
 3. Creación de plantillas y extracción de características
 
 Una vez detectados los picos R, el sistema construye automáticamente dos plantillas QRS a partir de los primeros seis latidos válidos. Para ello, analiza ventanas de 400 ms centradas en cada pico R y busca latidos con áreas similares y una correlación de Pearson superior a 0.95. Las plantillas se actualizan posteriormente con los latidos clasificados como normales.
-Para analizar cada nuevo latido, extrae cuatro características: diferencia de área respecto a la plantilla, correlación máxima, duración del QRS e intervalo RR. [4]
+Para analizar cada nuevo latido, extrae cuatro características: diferencia de área respecto a la plantilla, correlación máxima, duración del QRS e intervalo RR. [6]
 
 4. Detección de anomalías y visualización
 
-Finalmente, las cuatro características se introducen en un árbol de decisiones que utiliza umbrales para identificar latidos normales o anormales y alteraciones del ritmo.[4]
+Finalmente, las cuatro características se introducen en un árbol de decisiones que utiliza umbrales para identificar latidos normales o anormales y alteraciones del ritmo.[6]
 
 #### Interfaz 
 La interfaz desarrollada en el artículo presenta la señal ECG original, los complejos QRS extraídos y las variaciones de la frecuencia cardíaca. Además, muestra la frecuencia actual, el intervalo RR en milisegundos y la cantidad de QRS reconocidos. 
@@ -214,4 +225,8 @@ Available: https://www.ahajournals.org/doi/10.1161/CIR.0000000000001123
 [3] World Health Organization Regional Office for Europe, *What Is the Effectiveness of Systematic Population-Level Screening Programmes for Reducing the Burden of Cardiovascular Diseases?*, 2nd ed. Copenhagen, Denmark: WHO Regional Office for Europe, 2024.  
 Available: https://www.who.int/europe/publications/i/item/978-92-890-6088-2
 
-[4] S. Gradl, P. Kugler, C. Lohmüller y B. M. Eskofier, “Real-time ECG monitoring and arrhythmia detection using Android-based mobile devices,” Proc. 34th Annual International Conference of the IEEE Engineering in Medicine and Biology Society, pp. 2452–2455, 2012, doi: 10.1109/EMBC.2012.6346460.
+[4] “iirnotch — SciPy v1.18.0 Manual.” Accessed: Sep. 24, 2026. [Online]. Available: https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.iirnotch.html
+
+[5] G. Lenis, N. Pilia, A. Loewe, W. H. W. Schulze, and O. Dössel, “Comparison of Baseline Wander Removal Techniques considering the Preservation of ST Changes in the Ischemic ECG: A Simulation Study,” Comput Math Methods Med, vol. 2017, p. 9295029, 2017, doi: 10.1155/2017/9295029.
+
+[6] S. Gradl, P. Kugler, C. Lohmüller y B. M. Eskofier, “Real-time ECG monitoring and arrhythmia detection using Android-based mobile devices,” Proc. 34th Annual International Conference of the IEEE Engineering in Medicine and Biology Society, pp. 2452–2455, 2012, doi: 10.1109/EMBC.2012.6346460.
