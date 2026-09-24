@@ -33,7 +33,96 @@ Por esta razón, resulta de interés contar con herramientas que permitan analiz
 
 A partir de esta problemática, se plantea el uso del procesamiento digital de señales ECG como una alternativa para analizar la señal, extraer características relevantes e identificar posibles alteraciones del ritmo cardíaco que puedan requerir una evaluación posterior.
 
+# Propuesta de solución
 
+## Detector y visualizador de posibles alteraciones del ritmo cardíaco mediante ECG
+
+A partir de la problemática identificada, proponemos desarrollar una herramienta capaz de analizar señales de electrocardiograma (ECG) con el objetivo de identificar latidos o segmentos que presenten características diferentes al comportamiento esperado.
+
+La propuesta integra dos funciones principales:
+
+1. **Detección de posibles alteraciones:** el sistema analizará información relevante presente en el ECG para reconocer cambios en el ritmo y en la morfología de los latidos.
+
+2. **Visualización de resultados:** los resultados obtenidos serán presentados mediante una interfaz que permita observar la señal ECG y localizar los latidos o segmentos identificados como potencialmente anormales.
+
+La herramienta se plantea como un sistema de apoyo para el análisis de señales ECG y no como un reemplazo del diagnóstico médico.
+
+---
+
+## Funcionamiento general de la propuesta
+
+El funcionamiento del sistema puede resumirse en cuatro etapas principales:
+
+**ECG de entrada → Análisis del latido → Identificación de posibles alteraciones → Visualización de resultados**
+
+### 1. Entrada de la señal ECG
+
+El sistema recibirá una señal electrocardiográfica que podrá provenir inicialmente de registros almacenados, como los disponibles en bases de datos de PhysioNet.
+
+Esta señal contiene información sobre la actividad eléctrica del corazón a lo largo del tiempo.
+
+### 2. Análisis de los latidos
+
+A partir de la señal ECG se analizarán características que permitan describir el comportamiento de cada latido.
+
+Estas características pueden dividirse principalmente en dos grupos:
+
+| Tipo de información | Características de interés |
+|---|---|
+| **Ritmo cardíaco** | Intervalos R-R, frecuencia cardíaca y regularidad o variabilidad entre latidos |
+| **Morfología** | Forma y duración del complejo QRS, información de las ondas P y T y cambios en la forma del latido |
+
+La combinación de información temporal y morfológica permite representar de manera cuantitativa el comportamiento de la señal ECG.
+
+### 3. Identificación de posibles alteraciones
+
+Una vez obtenidas las características de cada latido, estas podrán compararse con patrones esperados o con criterios definidos por el método de clasificación utilizado.
+
+Si un latido presenta diferencias relevantes en su ritmo o morfología, el sistema podrá señalarlo como una **posible alteración** para su posterior revisión.
+
+Por ejemplo, cambios importantes en los intervalos R-R pueden indicar irregularidad en el ritmo, mientras que modificaciones en la duración o forma del complejo QRS pueden indicar diferencias en la morfología del latido.
+
+### 4. Visualización
+
+Finalmente, la herramienta mostrará los resultados obtenidos de forma gráfica.
+
+El objetivo es que el usuario pueda visualizar:
+
+- La señal ECG analizada.
+- Los latidos detectados.
+- Información relacionada con el ritmo cardíaco.
+- Las características obtenidas durante el análisis.
+- Los latidos o segmentos identificados como potencialmente anormales.
+
+De esta manera, el sistema integrará en una sola herramienta el análisis de la señal y la presentación de los resultados.
+
+---
+
+## ¿Cómo ayuda el ECG a identificar alteraciones?
+
+El ECG registra la actividad eléctrica del corazón y permite observar diferentes componentes asociados a cada ciclo cardíaco, entre ellos las ondas P, el complejo QRS y la onda T.
+
+Además, la identificación de los picos R permite calcular el **intervalo R-R**, correspondiente al tiempo transcurrido entre dos picos R consecutivos.
+
+A partir de estos elementos es posible obtener información relacionada con:
+
+- La frecuencia cardíaca.
+- La regularidad del ritmo.
+- La variabilidad entre latidos.
+- La duración del complejo QRS.
+- La forma de los distintos componentes del ECG.
+
+Por lo tanto, el análisis conjunto del **ritmo** y la **morfología** permite caracterizar cada latido y detectar aquellos que presentan un comportamiento diferente al esperado.
+
+> **Importante:** la identificación realizada por el sistema corresponde a posibles alteraciones de la señal ECG. La interpretación clínica y el diagnóstico definitivo deben ser realizados por un profesional de la salud.
+
+---
+
+## Objetivo de la solución
+
+Desarrollar un sistema que integre el análisis y la visualización de señales ECG para facilitar la identificación de latidos o segmentos con posibles alteraciones del ritmo cardíaco.
+
+La propuesta busca facilitar una revisión más rápida y objetiva de la señal, permitiendo resaltar regiones que podrían requerir una evaluación posterior.
 
 
 
