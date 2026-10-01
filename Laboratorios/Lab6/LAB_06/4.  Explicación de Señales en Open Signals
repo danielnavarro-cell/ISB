@@ -1,0 +1,180 @@
+# Análisis de señales EEG adquiridas con OpenSignals
+
+## 1. Objetivo
+
+El objetivo de esta adquisición fue observar cualitativamente los cambios de la señal EEG del participante bajo tres condiciones diferentes:
+
+1. **Condición basal**
+2. **Ojos abiertos**
+3. **Actividad cognitiva mediante preguntas**, donde la participante debía pensar la respuesta sin verbalizarla
+
+Las señales fueron adquiridas y visualizadas mediante **OpenSignals (r)evolution**, utilizando dos canales de adquisición, identificados como **A1 y A2**, con una frecuencia de muestreo de **1000 Hz**.
+
+> **Nota:** El presente análisis corresponde principalmente a una inspección visual de las señales en el dominio temporal. Para identificar cambios específicos en las bandas delta, theta, alfa, beta o gamma sería necesario realizar posteriormente un análisis en frecuencia mediante FFT o densidad espectral de potencia (PSD).
+
+---
+
+# 2. Condición basal
+
+
+
+### Observaciones
+
+Durante el registro basal, la señal presenta una actividad relativamente estable durante la mayor parte del intervalo analizado.
+
+En el **canal A1** se observa una señal centrada aproximadamente alrededor de cero, con oscilaciones de pequeña amplitud durante la mayor parte de la adquisición. Sin embargo, aparecen algunos picos aislados de mayor amplitud. Estos eventos son considerablemente más grandes que la actividad observada alrededor de ellos y podrían corresponder a **artefactos producidos por movimiento, parpadeo, cambios en el contacto de los electrodos o interferencias externas**.
+
+El **canal A2** muestra un comportamiento todavía más estable, con menor variabilidad de la señal central y sin cambios abruptos tan marcados como los encontrados en A1.
+
+En términos generales, el registro basal presenta:
+
+- Relativa estabilidad de la señal.
+- Baja variabilidad alrededor de la línea de referencia.
+- Pocos eventos transitorios de gran amplitud.
+- Diferencias de amplitud entre los canales A1 y A2.
+- Presencia de algunos posibles artefactos principalmente en A1.
+
+Esta condición puede utilizarse como **referencia para comparar los cambios producidos durante la apertura de los ojos y durante la actividad cognitiva**.
+
+---
+
+# 3. Condición de ojos abiertos
+
+![EEG ojos abiertos](imagenes/eeg_ojos_abiertos.png)
+
+### Observaciones
+
+Al solicitar a la participante que mantuviera los **ojos abiertos**, la señal presenta una mayor variabilidad temporal respecto al registro basal.
+
+En ambos canales se observa un aumento importante de las fluctuaciones de amplitud. En **A1** aparecen múltiples variaciones rápidas y algunos eventos abruptos que alcanzan amplitudes considerablemente mayores que las oscilaciones habituales de la señal.
+
+El canal **A2** presenta un comportamiento similar, con mayor dispersión de los valores alrededor de cero y algunos eventos transitorios pronunciados.
+
+La apertura de los ojos introduce además nuevas posibles fuentes de artefacto. Los movimientos oculares y los parpadeos generan potenciales eléctricos relativamente grandes debido a la actividad electrooculográfica (EOG), los cuales pueden propagarse hacia los electrodos utilizados para registrar EEG.
+
+Por esta razón, parte de los picos de gran amplitud encontrados durante esta etapa podrían estar asociados a:
+
+- Parpadeos.
+- Movimiento de los ojos.
+- Movimiento de la cabeza.
+- Actividad muscular facial.
+- Variaciones en el contacto entre electrodo y piel.
+
+Comparando visualmente con la condición basal, el registro de ojos abiertos muestra una señal **menos estable y con una mayor cantidad de fluctuaciones y eventos transitorios**.
+
+Sin embargo, esta observación no permite afirmar directamente que una banda específica del EEG aumentó o disminuyó. Para comprobar, por ejemplo, la reducción de actividad alfa asociada a la apertura de los ojos, sería necesario analizar el contenido espectral de la señal.
+
+---
+
+# 4. Actividad cognitiva: preguntas sin respuesta verbal
+
+![EEG preguntas](imagenes/eeg_preguntas.png)
+
+### Procedimiento
+
+Durante esta etapa se realizaron diferentes preguntas a la participante. Se le indicó que debía **pensar mentalmente en la respuesta sin decirla en voz alta**.
+
+El objetivo fue generar una condición de actividad cognitiva evitando, en la medida de lo posible, los artefactos musculares asociados al habla.
+
+### Observaciones
+
+Durante esta condición se observa una actividad continua y variable en ambos canales.
+
+En el **canal A1** existen oscilaciones frecuentes alrededor de la línea basal, con variaciones positivas y negativas a lo largo de todo el registro. A diferencia de la condición de ojos abiertos, en el segmento mostrado no predominan eventos extremos tan notorios, sino una actividad distribuida de manera relativamente continua.
+
+El **canal A2** presenta igualmente fluctuaciones constantes alrededor de su valor de referencia. La señal conserva una variabilidad temporal considerable durante prácticamente toda la adquisición.
+
+Esta actividad coincide temporalmente con el periodo durante el cual la participante estaba escuchando las preguntas y elaborando mentalmente sus respuestas.
+
+No obstante, únicamente a partir de la señal temporal **no es posible atribuir estas variaciones directamente al procesamiento cognitivo**. Para evaluar posibles cambios asociados a concentración, atención o procesamiento mental sería necesario comparar cuantitativamente la potencia de diferentes bandas de frecuencia entre las condiciones experimentales.
+
+---
+
+# 5. Comparación entre las tres condiciones
+
+| Característica | Basal | Ojos abiertos | Preguntas |
+|---|---|---|---|
+| Estabilidad temporal | Mayor | Menor | Intermedia |
+| Fluctuaciones rápidas | Bajas en gran parte del registro | Elevadas | Frecuentes |
+| Eventos de gran amplitud | Algunos eventos aislados | Varios eventos pronunciados | Menos pronunciados en el segmento mostrado |
+| Posibles artefactos oculares | Menores | Mayores | Posibles |
+| Posibles artefactos de movimiento | Algunos | Más notorios | Posibles |
+| Actividad cognitiva dirigida | No | No necesariamente | Sí |
+| Interpretación espectral | No realizada | No realizada | No realizada |
+
+La diferencia más evidente en los registros temporales se encuentra entre la **condición basal y la condición de ojos abiertos**.
+
+Durante el basal se observa una señal comparativamente más estable, mientras que con los ojos abiertos aumenta considerablemente la variabilidad y aparecen eventos de mayor amplitud.
+
+Durante la condición de preguntas, la señal mantiene fluctuaciones continuas mientras la participante procesa mentalmente las respuestas, aunque el registro mostrado no presenta tantos eventos extremos como la condición de ojos abiertos.
+
+---
+
+# 6. Consideraciones sobre los artefactos
+
+Es importante considerar que una señal EEG posee amplitudes relativamente pequeñas y puede ser fácilmente contaminada por otras fuentes eléctricas.
+
+Entre los principales artefactos que podrían encontrarse en los registros realizados se encuentran:
+
+- **EOG:** movimiento de los ojos y parpadeos.
+- **EMG:** contracciones de músculos faciales, mandibulares o del cuello.
+- Movimiento del participante.
+- Modificaciones del contacto electrodo-piel.
+- Ruido eléctrico ambiental.
+- Interferencia de la red eléctrica.
+
+Los picos abruptos que aparecen en determinados instantes, particularmente durante la condición de ojos abiertos, deben analizarse cuidadosamente antes de considerarlos actividad cerebral.
+
+---
+
+# 7. Interpretación fisiológica esperada
+
+La comparación realizada es consistente con algunos fenómenos esperados durante el registro EEG.
+
+Durante condiciones de reposo, especialmente cuando existe relajación y reducción de estímulos visuales, la actividad cerebral puede presentar un comportamiento más regular.
+
+Al abrir los ojos aumenta el procesamiento de información visual y también se introducen artefactos relacionados con los movimientos oculares y los parpadeos. Por ello, el registro temporal puede mostrar una mayor variabilidad.
+
+Por otro lado, durante la condición de preguntas existe un aumento de la demanda cognitiva debido a procesos como:
+
+- Atención.
+- Comprensión de la pregunta.
+- Recuperación de información.
+- Memoria de trabajo.
+- Elaboración mental de una respuesta.
+
+Sin embargo, para relacionar estos procesos con cambios específicos del EEG se requiere complementar la inspección temporal con un **análisis en frecuencia**.
+
+---
+
+# 8. Próximo análisis recomendado
+
+Para realizar una comparación cuantitativa entre las tres condiciones se propone procesar las señales siguiendo el flujo:
+
+`EEG crudo → eliminación de artefactos → filtrado → FFT/PSD → separación por bandas → comparación de potencia`
+
+Las principales bandas que podrían evaluarse son:
+
+| Banda | Rango aproximado |
+|---|---:|
+| Delta | 0.5 – 4 Hz |
+| Theta | 4 – 8 Hz |
+| Alfa | 8 – 13 Hz |
+| Beta | 13 – 30 Hz |
+| Gamma | > 30 Hz |
+
+Especialmente sería interesante comparar la **potencia relativa de alfa, theta y beta** entre la condición basal, ojos abiertos y actividad cognitiva.
+
+---
+
+# 9. Conclusión
+
+Los registros obtenidos mediante OpenSignals permiten observar diferencias cualitativas entre las tres condiciones experimentales.
+
+La **condición basal** presenta el comportamiento temporal más estable, aunque existen algunos eventos aislados posiblemente asociados a artefactos.
+
+La condición de **ojos abiertos** muestra un incremento evidente de la variabilidad y una mayor presencia de eventos de amplitud elevada, probablemente como resultado de la combinación entre actividad EEG y artefactos oculares o musculares.
+
+Finalmente, durante la condición de **preguntas sin respuesta verbal** se observa una actividad continua mientras la participante realiza el procesamiento mental de las preguntas. El hecho de no responder verbalmente permite reducir parte de la contaminación electromiográfica producida por los músculos involucrados en el habla.
+
+A pesar de estas diferencias visuales, no es posible determinar únicamente a partir de estos gráficos qué bandas cerebrales aumentaron o disminuyeron. Por ello, el siguiente paso consiste en realizar un procesamiento digital de las señales y comparar cuantitativamente su contenido espectral.
