@@ -70,6 +70,7 @@ Aporte al proyecto
 No implica que nuestro proyecto deba implementar inmediatamente una CNN.
 
 Para la primera versión del proyecto resulta razonable conservar variables fisiológicamente interpretables como RR, frecuencia cardíaca y características morfológicas. Posteriormente, si se dispone de suficientes datos, podría compararse este enfoque con un modelo basado en CNN.
+
 --- 
 
 Relación entre los tres trabajos y nuestro proyecto 
