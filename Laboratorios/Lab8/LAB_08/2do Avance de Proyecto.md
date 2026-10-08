@@ -70,8 +70,21 @@ Aporte al proyecto
 No implica que nuestro proyecto deba implementar inmediatamente una CNN.
 
 Para la primera versión del proyecto resulta razonable conservar variables fisiológicamente interpretables como RR, frecuencia cardíaca y características morfológicas. Posteriormente, si se dispone de suficientes datos, podría compararse este enfoque con un modelo basado en CNN.
+--- 
 
+Relación entre los tres trabajos y nuestro proyecto 
+
+| Investigación | Principal aporte | Aplicación en nuestro proyecto |
+|---|---|---|
+| **Gradl et al., 2012** | Detección QRS + detección de anomalías + interfaz | Arquitectura general del detector y visualizador |
+| **de Chazal et al., 2004** | Morfología ECG + intervalos RR | Características principales que analizaremos |
+| **Kiranyaz et al., 2016** | Clasificación mediante CNN 1D | Posible evolución futura del clasificador |
+| **Base compartida** | MIT-BIH Arrhythmia Database | Base inicial para desarrollo y evaluación | 
 ## Plan de acción (Cronograma de Avances)
+--- 
+Conclusión: 
+Para el alcance actual del proyecto, los trabajos de Gradl et al. y de Chazal et al. son los más directamente relacionados con la implementación: el primero sustenta la arquitectura de detección, monitoreo y visualización, mientras que el segundo justifica utilizar RR y morfología como información para analizar cada latido. El trabajo de Kiranyaz et al. complementa el estado del arte mostrando cómo estas tareas pueden evolucionar hacia técnicas de aprendizaje automático.
+Por ello, la propuesta no busca inicialmente realizar un diagnóstico clínico, sino desarrollar una herramienta capaz de procesar el ECG, detectar latidos que se aparten del patrón esperado y presentarlos claramente para su posterior revisión. 
 
 Para este trabajo nos organizaremos para desarrollarlo en las semanas 10 y 15 que son las que aún nos quedan hasta antes de la exposición final. Tomamos en cuenta también que la semana 9 tenemos exámenes parciales y para la semana 16 tenemos finales y la presentación final por lo que no las estamos considerando para el desarrollo. También para equilibrar la carga que tenemos cada uno con otros cursos en la universidad estamos ideando dedicarle unas **2 horas semanales** al proyecto.
 
@@ -109,4 +122,10 @@ Los símbolos de anotación se agruparon en las **5 clases del estándar AAMI EC
 | V | V, E | Ectópico ventricular |
 | F | F | Fusión |
 | Q | /, f, Q | Marcapasos / no clasificable |
+
+--- 
+Referencias 
+[1] P. de Chazal, M. O'Dwyer, and R. B. Reilly, “Automatic classification of heartbeats using ECG morphology and heartbeat interval features,” IEEE Trans. Biomed. Eng., vol. 51, no. 7, pp. 1196–1206, Jul. 2004, doi: 10.1109/TBME.2004.827359 
+[2] S. Gradl, P. Kugler, C. Lohmüller, and B. M. Eskofier, “Real-time ECG monitoring and arrhythmia detection using Android-based mobile devices,” in Proc. 34th Annu. Int. Conf. IEEE Eng. Med. Biol. Soc. (EMBC), 2012, pp. 2452–2455, doi:  10.1109/EMBC.2012.6346460
+[3] S. Kiranyaz, T. Ince, and M. Gabbouj, “Real-time patient-specific ECG classification by 1-D convolutional neural networks,” IEEE Trans. Biomed. Eng., vol. 63, no. 3, pp. 664–675, Mar. 2016, doi: 10.1109/TBME.2015.2468589
 
