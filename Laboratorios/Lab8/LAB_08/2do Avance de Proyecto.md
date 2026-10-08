@@ -42,15 +42,3 @@ Los símbolos de anotación se agruparon en las **5 clases del estándar AAMI EC
 | F | F | Fusión |
 | Q | /, f, Q | Marcapasos / no clasificable |
 
-
-
-### 4. Conclusiones del avance
-
-- La base ya la tenemos descargada, organizada por latido y agrupada en clases AAMI.
-- El desbalance de clases define cómo evaluaremos el sistema: sensibilidad y especificidad.
-- El EDA confirma que el RR (ritmo) separa bien los latidos prematuros y que la morfología del QRS es necesaria para los ventriculares.
-- El detector del Avance 1 funciona bien en señales limpias, pero hay que mejorarlo cuando tenemos registros ruidosos.
-
-### Referencia adicional
-
-[1] ANSI/AAMI EC57:2012, *Testing and Reporting Performance Results of Cardiac Rhythm and ST Segment Measurement Algorithms*. Arlington, VA, USA: AAMI, 2012.
