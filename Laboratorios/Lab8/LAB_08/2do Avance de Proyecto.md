@@ -177,9 +177,16 @@ La regla RR sobreestima los anómalos en los registros 106 y 119, y los subestim
 - Validar con más registros de MIT-BIH (los 44 registros sin marcapasos).
 
 ---
-Referencias
+---
+
+## Referencias
+
 [1] P. de Chazal, M. O'Dwyer, and R. B. Reilly, "Automatic classification of heartbeats using ECG morphology and heartbeat interval features," IEEE Trans. Biomed. Eng., vol. 51, no. 7, pp. 1196–1206, Jul. 2004, doi: 10.1109/TBME.2004.827359
+
 [2] S. Gradl, P. Kugler, C. Lohmüller, and B. M. Eskofier, "Real-time ECG monitoring and arrhythmia detection using Android-based mobile devices," in Proc. 34th Annu. Int. Conf. IEEE Eng. Med. Biol. Soc. (EMBC), 2012, pp. 2452–2455, doi: 10.1109/EMBC.2012.6346460
+
 [3] S. Kiranyaz, T. Ince, and M. Gabbouj, "Real-time patient-specific ECG classification by 1-D convolutional neural networks," IEEE Trans. Biomed. Eng., vol. 63, no. 3, pp. 664–675, Mar. 2016, doi: 10.1109/TBME.2015.2468589
+
 [4] G. B. Moody and R. G. Mark, "The impact of the MIT-BIH Arrhythmia Database," IEEE Eng. Med. Biol. Mag., vol. 20, no. 3, pp. 45–50, May–Jun. 2001, doi: 10.1109/51.932724
+
 [5] A. L. Goldberger et al., "PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals," Circulation, vol. 101, no. 23, p. e215, Jun. 2000, doi: 10.1161/01.CIR.101.23.e215
