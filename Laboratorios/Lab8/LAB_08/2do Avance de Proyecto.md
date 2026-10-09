@@ -107,9 +107,17 @@ Para este trabajo nos organizaremos para desarrollarlo en las semanas 10 y 15 qu
 
 ### 1. Descarga y estructuración de la base de datos
 
-Descargamos la **MIT-BIH Arrhythmia Database** de PhysioNet usando la librería `wfdb` de Python (`eda_mitdb.py`). Usamos Visual Studio Code para hacer el proceso de codificado y para cada registro se leen la señal (`.dat`, `.hea`) y las anotaciones de los especialistas (`.atr`).
+Descargamos la **MIT-BIH Arrhythmia Database** de PhysioNet usando la librería `wfdb` de Python (`eda_mitdb.py`), trabajando en Visual Studio Code. Para este avance se usaron **4 registros** de ~30 min a 360 Hz, elegidos por tener ritmos distintos: **100** (ritmo casi normal), **106** y **119** (muchas extrasístoles) y **200** (mixto). La validación con los 44 registros sin marcapasos queda para la semana 10 (hito H1).
 
-Con esto logramos generar dos tablas:
+Cada registro consta de tres archivos, organizados en la carpeta `data/mitdb/`:
+
+| Archivo | Contenido |
+|---|---|
+| `.dat` | Señal ECG (2 canales) |
+| `.hea` | Encabezado: frecuencia de muestreo, canales y ganancia |
+| `.atr` | Anotaciones: tipo de cada latido, marcado por cardiólogos |
+
+Con esto generamos dos tablas:
 
 - **`tabla_registros.csv`**: una fila por registro (derivación, frecuencia de muestreo, duración, número de latidos por clase, si tiene marcapasos).
 - **`latidos.csv`**: una fila por latido (registro, posición, símbolo de anotación, clase AAMI, RR previo y RR siguiente en ms).
@@ -124,9 +132,54 @@ Los símbolos de anotación se agruparon en las **5 clases del estándar AAMI EC
 | F | F | Fusión |
 | Q | /, f, Q | Marcapasos / no clasificable |
 
---- 
-Referencias 
-[1] P. de Chazal, M. O'Dwyer, and R. B. Reilly, “Automatic classification of heartbeats using ECG morphology and heartbeat interval features,” IEEE Trans. Biomed. Eng., vol. 51, no. 7, pp. 1196–1206, Jul. 2004, doi: 10.1109/TBME.2004.827359 
-[2] S. Gradl, P. Kugler, C. Lohmüller, and B. M. Eskofier, “Real-time ECG monitoring and arrhythmia detection using Android-based mobile devices,” in Proc. 34th Annu. Int. Conf. IEEE Eng. Med. Biol. Soc. (EMBC), 2012, pp. 2452–2455, doi:  10.1109/EMBC.2012.6346460
-[3] S. Kiranyaz, T. Ince, and M. Gabbouj, “Real-time patient-specific ECG classification by 1-D convolutional neural networks,” IEEE Trans. Biomed. Eng., vol. 63, no. 3, pp. 664–675, Mar. 2016, doi: 10.1109/TBME.2015.2468589
+### 2. EDA: resultados por registro
 
+Se aplicó el detector de picos R del Avance 1 y se comparó con las anotaciones de los especialistas (tolerancia de ±150 ms).
+
+| Registro | Latidos anotados | Latidos detectados | BPM | SDNN (ms) | Sensibilidad picos R | VPP picos R |
+|---|---|---|---|---|---|---|
+| 100 | 2273 | 2277 | 75.6 | 53.9 | 99.96 % | 99.78 % |
+| 106 | 2027 | 2221 | 73.8 | 281.9 | 95.91 % | 87.53 % |
+| 119 | 1987 | 2803 | 93.1 | 330.8 | 100.00 % | 70.89 % |
+| 200 | 2601 | 2689 | 89.4 | 143 | 73.97 % | 71.55 % |
+
+- **Sensibilidad:** porcentaje de latidos reales que el detector encontró.
+- **VPP (valor predictivo positivo):** porcentaje de picos detectados que son latidos reales.
+
+### 3. Detector y clasificador vs. especialistas
+
+**Detección de picos R.** El detector funciona casi perfecto en el registro 100. En el 119 encuentra todos los latidos, pero marca unos 800 de más (2803 detectados para 1987 reales). En el 200 pierde cerca de un 26 % de los latidos.
+
+**Latidos anómalos.** Se comparó el porcentaje de latidos anómalos según los cardiólogos con el que marca nuestra regla de intervalos RR:
+
+| Registro | Anómalos según especialistas | Anómalos según regla RR |
+|---|---|---|
+| 100 | 1.5 % | 2.4 % |
+| 106 | 25.7 % | 60.8 % |
+| 119 | 22.3 % | 56.0 % |
+| 200 | 33.0 % | 24.6 % |
+
+La regla RR sobreestima los anómalos en los registros 106 y 119, y los subestima en el 200. La comparación es aproximada: los especialistas anotan **latidos** y nuestra regla compara **intervalos RR**.
+
+### 4. Hallazgos
+
+1. **Ritmo regular.** En el registro 100 la sensibilidad es 99.96 % y el VPP 99.78 %, por lo que el pipeline funciona.
+2. **Extrasístoles.** En el registro 119 se detectan 2803 picos para 1987 latidos reales (VPP 70.9 %) y en el 200 la sensibilidad baja a 74.0 %.
+3. **Regla RR.** En el registro 106 la regla marca 60.8 % de latidos como anómalos frente a 25.7 % anotado. Un umbral global no basta.
+
+**Limitación:** con 4 registros el análisis es exploratorio y está sesgado hacia casos difíciles (3 de 4 tienen muchas arritmias).
+
+### 5. Siguientes pasos
+
+- Umbral adaptativo o algoritmo Pan–Tompkins para el detector de picos R.
+- Promedio móvil local en la regla RR, en lugar de un umbral global.
+- Características morfológicas del latido.
+- Validar con más registros de MIT-BIH (los 44 registros sin marcapasos).
+
+---
+Referencias
+[1] P. de Chazal, M. O'Dwyer, and R. B. Reilly, "Automatic classification of heartbeats using ECG morphology and heartbeat interval features," IEEE Trans. Biomed. Eng., vol. 51, no. 7, pp. 1196–1206, Jul. 2004, doi: 10.1109/TBME.2004.827359
+[2] S. Gradl, P. Kugler, C. Lohmüller, and B. M. Eskofier, "Real-time ECG monitoring and arrhythmia detection using Android-based mobile devices," in Proc. 34th Annu. Int. Conf. IEEE Eng. Med. Biol. Soc. (EMBC), 2012, pp. 2452–2455, doi: 10.1109/EMBC.2012.6346460
+[3] S. Kiranyaz, T. Ince, and M. Gabbouj, "Real-time patient-specific ECG classification by 1-D convolutional neural networks," IEEE Trans. Biomed. Eng., vol. 63, no. 3, pp. 664–675, Mar. 2016, doi: 10.1109/TBME.2015.2468589
+[4] G. B. Moody and R. G. Mark, "The impact of the MIT-BIH Arrhythmia Database," IEEE Eng. Med. Biol. Mag., vol. 20, no. 3, pp. 45–50, May–Jun. 2001, doi: 10.1109/51.932724
+[5] A. L. Goldberger et al., "PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals," Circulation, vol. 101, no. 23, p. e215, Jun. 2000, doi: 10.1161/01.CIR.101.23.e215
