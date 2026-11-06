@@ -53,7 +53,13 @@
     <div class="legend">
       <span><i class="dot dot--raw"></i>cruda</span>
       <span><i class="dot dot--filtered"></i>filtrada</span>
-      <span><i class="dot dot--peak"></i>pico R</span>
+      <span><i class="dot dot--peak"></i>pico R detectado</span>
+    </div>
+    <div id="legend-val" class="legend" hidden>
+      <span><i class="tri tri--normal"></i>latido normal (especialistas)</span>
+      <span><i class="tri tri--anomalo"></i>latido anómalo (especialistas)</span>
+      <span><i class="mk mk--fp"></i>falso positivo</span>
+      <span><i class="mk mk--missed"></i>latido no detectado</span>
     </div>
   </section>
 
@@ -76,15 +82,72 @@
         <span class="stat__unit"></span>
       </div>
       <div class="stat">
-        <span class="stat__label">latidos anómalos</span>
+        <span class="stat__label">intervalos RR anómalos</span>
         <span class="stat__value" id="stat-anom">—</span>
         <span class="stat__unit">%</span>
       </div>
     </div>
   </section>
 
+  <section class="panel panel--validation">
+    <h2>Comparación con especialistas (anotaciones MIT-BIH)</h2>
+
+    <p id="val-note" class="val-note">
+      Carga un registro MIT-BIH para comparar el detector con las anotaciones de los cardiólogos.
+      Los archivos CSV propios no tienen anotaciones.
+    </p>
+
+    <div id="val-body" hidden>
+      <div class="stats-grid">
+        <div class="stat">
+          <span class="stat__label">sensibilidad de picos R</span>
+          <span class="stat__value" id="val-sens">—</span>
+          <span class="stat__unit">% de latidos reales encontrados</span>
+        </div>
+        <div class="stat">
+          <span class="stat__label">valor predictivo positivo</span>
+          <span class="stat__value" id="val-ppv">—</span>
+          <span class="stat__unit">% de picos que son latidos reales</span>
+        </div>
+        <div class="stat">
+          <span class="stat__label">detectados / anotados</span>
+          <span class="stat__value" id="val-count">—</span>
+          <span class="stat__unit">latidos</span>
+        </div>
+        <div class="stat">
+          <span class="stat__label">falsos positivos · perdidos</span>
+          <span class="stat__value" id="val-errors">—</span>
+          <span class="stat__unit">picos</span>
+        </div>
+      </div>
+
+      <div class="cmp">
+        <div class="cmp__row">
+          <span class="cmp__label">especialistas</span>
+          <div class="cmp__bar">
+            <div id="bar-ann-normal" class="cmp__seg cmp__seg--normal"></div>
+            <div id="bar-ann-anomalo" class="cmp__seg cmp__seg--anomalo"></div>
+          </div>
+          <b id="txt-ann">—</b>
+        </div>
+        <div class="cmp__row">
+          <span class="cmp__label">regla RR (nuestro código)</span>
+          <div class="cmp__bar">
+            <div id="bar-rule-normal" class="cmp__seg cmp__seg--normal"></div>
+            <div id="bar-rule-anomalo" class="cmp__seg cmp__seg--anomalo"></div>
+          </div>
+          <b id="txt-rule">—</b>
+        </div>
+        <p class="val-note">
+          Porcentaje anómalo. Los especialistas se cuentan por latido y la regla por intervalo RR,
+          por eso la comparación es aproximada.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section class="panel panel--beats">
-    <h2>Clasificación por latido</h2>
+    <h2>Clasificación por intervalo RR</h2>
     <div id="beat-strip" class="beat-strip"></div>
     <div class="beat-summary">
       <span><i class="dot dot--normal"></i>normal <b id="pct-normal">—</b></span>
@@ -93,6 +156,8 @@
   </section>
 
 </main>
+
+<footer class="footer">Herramienta de apoyo, no reemplaza el diagnóstico médico.</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
 <script src="app.js"></script>

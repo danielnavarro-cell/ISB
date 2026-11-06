@@ -1,0 +1,7 @@
+# Datos descargados de PhysioNet (se bajan con python reproduce.py)
+data/
+# CSV de features (se regeneran con python reproduce.py)
+features_out/
+__pycache__/
+.pytest_cache/
+*.pyc
