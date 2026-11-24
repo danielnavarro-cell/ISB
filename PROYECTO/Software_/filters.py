@@ -1,27 +1,31 @@
-"""Filtrado de la señal ECG cruda."""
+"""Filtrado de ECG para análisis exploratorio por ventanas."""
 import numpy as np
-from scipy.signal import butter, filtfilt, iirnotch
+from scipy.signal import butter, sosfiltfilt, filtfilt, iirnotch
 
 
 def bandpass_filter(signal, fs, lowcut=0.5, highcut=40.0, order=4):
-    """Filtro pasa-banda para eliminar deriva de línea base y ruido de alta frecuencia."""
-    nyq = 0.5 * fs
-    low = lowcut / nyq
-    high = highcut / nyq
-    b, a = butter(order, [low, high], btype="band")
-    return filtfilt(b, a, signal)
+    if not 0 < lowcut < highcut < fs / 2:
+        raise ValueError("La frecuencia de muestreo no permite el pasa-banda de 0.5–40 Hz.")
+    sos = butter(order, [lowcut, highcut], btype="bandpass", fs=fs, output="sos")
+    return sosfiltfilt(sos, signal)
 
 
 def notch_filter(signal, fs, freq=60.0, quality=30.0):
-    """Filtro notch para eliminar interferencia de la línea eléctrica (60 Hz)."""
-    nyq = 0.5 * fs
-    w0 = freq / nyq
-    b, a = iirnotch(w0, quality)
+    if freq >= fs / 2:
+        return np.asarray(signal, dtype=float).copy()
+    b, a = iirnotch(freq, quality, fs=fs)
     return filtfilt(b, a, signal)
 
 
-def preprocess_ecg(signal, fs):
-    """Pipeline completo: notch + pasa-banda."""
-    signal = notch_filter(signal, fs)
-    signal = bandpass_filter(signal, fs)
-    return signal
+def preprocess_ecg(signal, fs, mains=60):
+    """Notch opcional (50/60 Hz), seguido de pasa-banda de 0.5–40 Hz.
+
+    El filtrado de fase cero usa la ventana completa; no es un filtro en vivo.
+    Un notch por encima de Nyquist se omite, sin corregir aliasing previo.
+    """
+    if mains not in (0, 50, 60):
+        raise ValueError("La interferencia de red debe ser 0, 50 o 60 Hz.")
+    x = np.asarray(signal, dtype=float)
+    if mains:
+        x = notch_filter(x, fs, freq=mains)
+    return bandpass_filter(x, fs)
