@@ -1,6 +1,0 @@
-# Instalar ademas de requirements.txt, exclusivamente en .venv.
-streamlit[auth]==1.67.0
-plotly==6.9.0
-reportlab==5.1.0
-cryptography==50.0.2
-qrcode==8.2
