@@ -55,6 +55,41 @@ WINDOW_COLUMNS = [f"w_{i:03d}" for i in range(N_WINDOW)]
 FEATURE_COLUMNS = RR_COLUMNS + MORPH_COLUMNS + FLAG_COLUMNS + WINDOW_COLUMNS
 
 
+def validate_feature_frame(df, metadata_columns=()):
+    """Return exactly 109 real, finite features; never reorder or coerce input.
+
+    Metadata is allowed only at an explicitly declared table boundary. The RF
+    prediction boundary accepts features only (the default).
+    """
+    if not isinstance(df, pd.DataFrame) or not df.columns.is_unique:
+        raise ValueError("Las columnas deben ser unicas en un DataFrame.")
+    missing = [c for c in FEATURE_COLUMNS if c not in df]
+    extra = [c for c in df if c not in FEATURE_COLUMNS and c not in metadata_columns]
+    if missing or extra:
+        raise ValueError(f"Esquema invalido: faltantes={missing}, adicionales={extra}.")
+    order = [c for c in df if c in FEATURE_COLUMNS]
+    if order != FEATURE_COLUMNS:
+        raise ValueError("El orden de las 109 caracteristicas no coincide con FEATURE_COLUMNS.")
+    X = df.loc[:, FEATURE_COLUMNS]
+    if any(not pd.api.types.is_numeric_dtype(t) or pd.api.types.is_complex_dtype(t) for t in X.dtypes):
+        raise ValueError("Las caracteristicas deben ser numericas reales, sin conversion implicita.")
+    if X.isna().any().any() or not np.isfinite(X.to_numpy(dtype=float)).all():
+        raise ValueError("Las caracteristicas contienen NaN o valores no finitos.")
+    return X
+
+
+def read_feature_csv(path, metadata_columns=()):
+    """Inspect the original header before pandas can rename duplicate columns."""
+    import csv
+    with open(path, newline="", encoding="utf-8-sig") as stream:
+        header = next(csv.reader(stream), [])
+    if not header or len(set(header)) != len(header):
+        raise ValueError("Encabezado CSV vacio o con columnas duplicadas.")
+    df = pd.read_csv(path, dtype={c: str for c in ("record", "patient_id") if c in header})
+    validate_feature_frame(df, metadata_columns)
+    return df
+
+
 def extract_beat_features(signal, r_peaks, fs):
     """
     Features de cada latido. `signal` debe estar ya filtrada (filters.preprocess_ecg)

@@ -1,0 +1,8 @@
+# IMPULSO | Estilo actual (tema oscuro); rediseño clínico pendiente de aprobación.
+[theme]
+base = "dark"
+primaryColor = "#14B8A6"
+backgroundColor = "#081923"
+secondaryBackgroundColor = "#102633"
+textColor = "#F1F6F7"
+borderColor = "#2F4C59"

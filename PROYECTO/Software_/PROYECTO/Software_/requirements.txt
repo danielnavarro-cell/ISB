@@ -1,5 +1,0 @@
-# Minimal application runtime; no originals, training jobs or model needed.
--r requirements-app.txt
-numpy==2.5.4
-scipy==1.18.1
-pandas==3.1.1
